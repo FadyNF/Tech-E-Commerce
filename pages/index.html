@@ -4,17 +4,24 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>TechHive</title>
-        <link rel="stylesheet" href="/styles/index.css" />
-        <script src="/scripts/index.js"></script>
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
             rel="stylesheet"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="/styles/index.css" />
+        <script src="/scripts/index.js" defer></script>
     </head>
     <body>
         <header>
             <nav class="navbar">
                 <div class="logo">Tech<span>Hive</span></div>
+                <button class="menu-toggle" aria-label="Toggle navigation menu">
+                    ☰
+                </button>
                 <ul class="nav-links">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -70,6 +77,20 @@
                     <p>84,999 EGP</p>
                 </div>
             </div>
+            <!-- Carousel controls for mobile only -->
+            <div class="carousel-controls mobile-only">
+                <button class="carousel-control prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-indicators">
+                    <div class="indicator active" data-index="0"></div>
+                    <div class="indicator" data-index="1"></div>
+                    <div class="indicator" data-index="2"></div>
+                </div>
+                <button class="carousel-control next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
         </section>
 
         <section class="categories hidden">
@@ -96,6 +117,20 @@
                     />
                     <h3>Accessories</h3>
                 </div>
+            </div>
+            <!-- Carousel controls for mobile only -->
+            <div class="carousel-controls mobile-only">
+                <button class="carousel-control prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-indicators">
+                    <div class="indicator active" data-index="0"></div>
+                    <div class="indicator" data-index="1"></div>
+                    <div class="indicator" data-index="2"></div>
+                </div>
+                <button class="carousel-control next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
