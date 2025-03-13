@@ -209,12 +209,6 @@ body {
     border: 2px solid #4A7269;
 }
 
-.avatar::before {
-    content: "RR";
-    font-size: 32px;
-    font-weight: bold;
-    color: #5E8B7E;
-}
 
 .completion-status {
     text-align: center;

@@ -1,3 +1,29 @@
+// Function to get initials from a full name
+function getInitials(fullName) {
+    return fullName
+        .split(' ') // Split the name into parts
+        .map(part => part[0]) // Get the first letter of each part
+        .join('') // Join the letters together
+        .toUpperCase(); // Convert to uppercase
+}
+
+// Function to update the avatar initials
+function updateAvatarInitials() {
+    const fullNameElement = document.querySelector('.info p strong'); // Get the full name element
+    if (fullNameElement) {
+        const fullName = fullNameElement.nextSibling.textContent.trim(); // Extract the full name
+        const initials = getInitials(fullName); // Get initials
+        const avatar = document.querySelector('.avatar'); // Get the avatar element
+
+        // Update the avatar's content using inline styles
+        avatar.style.position = 'relative'; // Ensure the avatar is positioned correctly
+        avatar.innerHTML = `<span style="font-size: 32px; font-weight: bold; color: #5E8B7E;">${initials}</span>`;
+    }
+}
+
+// Call the function to update the avatar initials when the page loads
+updateAvatarInitials();
+
 // Toggle password visibility
 document.querySelectorAll('.toggle-password').forEach(button => {
     button.addEventListener('click', function (e) {
@@ -29,6 +55,10 @@ const personalInfoFields = document.querySelectorAll('.info:nth-child(1) p');
 const personalInfoSaveButton = document.querySelector('.info:nth-child(1) .btn-save');
 
 personalInfoEditButton.addEventListener('click', function () {
+    // Hide the Edit button and show the Save button
+    personalInfoEditButton.style.display = 'none';
+    personalInfoSaveButton.style.display = 'inline-block';
+
     // Make personal info fields editable
     personalInfoFields.forEach(field => {
         if (field.textContent.includes(':')) {
@@ -37,7 +67,6 @@ personalInfoEditButton.addEventListener('click', function () {
             field.innerHTML = `<strong>${key}:</strong> <input type="text" value="${value}" />`;
         }
     });
-    personalInfoSaveButton.style.display = 'inline-block'; // Show the Save button
 });
 
 personalInfoSaveButton.addEventListener('click', function () {
@@ -50,7 +79,13 @@ personalInfoSaveButton.addEventListener('click', function () {
             field.innerHTML = `<strong>${key}:</strong> ${value}`;
         }
     });
-    personalInfoSaveButton.style.display = 'none'; // Hide the Save button
+
+    // Hide the Save button and show the Edit button
+    personalInfoSaveButton.style.display = 'none';
+    personalInfoEditButton.style.display = 'inline-block';
+
+    // Update the avatar initials after saving
+    updateAvatarInitials();
 });
 
 // Handle Edit and Save buttons for Billing Information
@@ -59,6 +94,10 @@ const billingInfoFields = document.querySelectorAll('.info:nth-child(2) p');
 const billingInfoSaveButton = document.querySelector('.info:nth-child(2) .btn-save');
 
 billingInfoEditButton.addEventListener('click', function () {
+    // Hide the Edit button and show the Save button
+    billingInfoEditButton.style.display = 'none';
+    billingInfoSaveButton.style.display = 'inline-block';
+
     // Make billing info fields editable
     billingInfoFields.forEach(field => {
         if (field.textContent.includes(':')) {
@@ -67,7 +106,6 @@ billingInfoEditButton.addEventListener('click', function () {
             field.innerHTML = `<strong>${key}:</strong> <input type="text" value="${value}" />`;
         }
     });
-    billingInfoSaveButton.style.display = 'inline-block'; // Show the Save button
 });
 
 billingInfoSaveButton.addEventListener('click', function () {
@@ -80,8 +118,10 @@ billingInfoSaveButton.addEventListener('click', function () {
             field.innerHTML = `<strong>${key}:</strong> ${value}`;
         }
     });
-    billingInfoSaveButton.style.display = 'none'; // Hide the Save button
-    
+
+    // Hide the Save button and show the Edit button
+    billingInfoSaveButton.style.display = 'none';
+    billingInfoEditButton.style.display = 'inline-block';
 });
 
 // Handle Delete Account button
