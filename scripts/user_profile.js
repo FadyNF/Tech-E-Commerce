@@ -51,7 +51,6 @@ personalInfoSaveButton.addEventListener('click', function () {
         }
     });
     personalInfoSaveButton.style.display = 'none'; // Hide the Save button
-    alert('Personal info saved!');
 });
 
 // Handle Edit and Save buttons for Billing Information
@@ -82,13 +81,21 @@ billingInfoSaveButton.addEventListener('click', function () {
         }
     });
     billingInfoSaveButton.style.display = 'none'; // Hide the Save button
-    alert('Billing info saved!');
+    
 });
 
 // Handle Delete Account button
 deleteAccountButton.addEventListener('click', function () {
-    if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
-        alert('Account deleted!');
-        // Here you would typically send a request to the server to delete the account
-    }
+    window.location.href = '../pages/index.html'; // Redirect to the homepage after deletion
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    // Menu toggle functionality
+    menuToggle.addEventListener("click", function (event) {
+        navLinks.classList.toggle("active");
+        event.stopPropagation(); // Prevents immediate closing when clicking the menu button
+    });
 });
