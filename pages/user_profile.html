@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/styles/user_profile.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Tech<span>Hive</span></div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="/pages/user_profile.html">Profile</a></li>
+                <li><a href="#">Comparison</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+            <button class="btn-outline">Login</button>
+        </nav>
+    </header>
+    
+    <section class="profile ">
+        <div class="profile-container">
+            <div class="profile-card">
+                <div class="profile-picture">
+                    <img src="profile-pic.jpg" alt="User Profile Picture">
+                </div>
+                <h2 class="profile-name">John Doe</h2>
+                <p class="profile-email">johndoe@example.com</p>
+                <button class="btn-primary" onclick="editProfile()">Edit Profile</button>
+            </div>
+            
+            <div class="profile-details">
+                <h3>Account Information</h3>
+                <p><strong>Username:</strong> johndoe</p>
+                <p><strong>Email:</strong> johndoe@example.com</p>
+                <p><strong>Phone:</strong> +123 456 7890</p>
+                <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer hidden">
+        <div class="footer-container hidden">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Customer Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 TechHive. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/scripts/user_profile.js"></script>
+</body>
+</html>
