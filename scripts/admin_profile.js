@@ -1,165 +1,257 @@
-// Sample data for users and products
-let users = [
-    { id: 1, name: "John Doe", email: "john@example.com", role: "admin" },
-    { id: 2, name: "Jane Smith", email: "jane@example.com", role: "user" },
-];
-
-let products = [
-    { id: 1, name: "Laptop", price: 999, description: "High-performance laptop" },
-    { id: 2, name: "Smartphone", price: 699, description: "Latest smartphone model" },
-];
-
-// DOM Elements
-const usersList = document.querySelector(".users-list");
-const productsList = document.querySelector(".products-list");
-const userModal = document.getElementById("user-modal");
-const productModal = document.getElementById("product-modal");
-const closeModalButtons = document.querySelectorAll(".close-modal");
-const userForm = document.getElementById("user-form");
-const productForm = document.getElementById("product-form");
-
-// Render Users
-function renderUsers() {
-    usersList.innerHTML = users
-        .map(
-            (user) => `
-            <div class="user-card">
-                <h4>${user.name}</h4>
-                <p>Email: ${user.email}</p>
-                <p>Role: ${user.role}</p>
-                <button onclick="editUser(${user.id})">Edit</button>
-                <button onclick="deleteUser(${user.id})">Delete</button>
-            </div>
-        `
-        )
-        .join("");
+// Function to get initials from a full name
+function getInitials(fullName) {
+    return fullName
+        .split(" ") // Split the name into parts
+        .map((part) => part[0]) // Get the first letter of each part
+        .join("") // Join the letters together
+        .toUpperCase(); // Convert to uppercase
 }
 
-// Render Products
-function renderProducts() {
-    productsList.innerHTML = products
-        .map(
-            (product) => `
-            <div class="product-card">
-                <h4>${product.name}</h4>
-                <p>Price: $${product.price}</p>
-                <p>Description: ${product.description}</p>
-                <button onclick="editProduct(${product.id})">Edit</button>
-                <button onclick="deleteProduct(${product.id})">Delete</button>
-            </div>
-        `
-        )
-        .join("");
-}
+// Function to update the avatar initials
+function updateAvatarInitials() {
+    const fullNameElement = document.querySelector(".info p strong"); // Get the full name element
+    if (fullNameElement) {
+        const fullName = fullNameElement.nextSibling.textContent.trim(); // Extract the full name
+        const initials = getInitials(fullName); // Get initials
+        const avatar = document.querySelector(".avatar"); // Get the avatar element
 
-// Open User Modal
-function openUserModal(user = null) {
-    if (user) {
-        document.getElementById("user-name").value = user.name;
-        document.getElementById("user-email").value = user.email;
-        document.getElementById("user-role").value = user.role;
-        userForm.dataset.id = user.id;
-    } else {
-        userForm.reset();
-        delete userForm.dataset.id;
+        // Update the avatar's content using inline styles
+        avatar.style.position = "relative"; // Ensure the avatar is positioned correctly
+        avatar.innerHTML = `<span style="font-size: 32px; font-weight: bold; color: #5E8B7E;">${initials}</span>`;
     }
-    userModal.style.display = "flex";
 }
 
-// Open Product Modal
-function openProductModal(product = null) {
-    if (product) {
-        document.getElementById("product-name").value = product.name;
-        document.getElementById("product-price").value = product.price;
-        document.getElementById("product-description").value = product.description;
-        productForm.dataset.id = product.id;
-    } else {
-        productForm.reset();
-        delete productForm.dataset.id;
-    }
-    productModal.style.display = "flex";
-}
+// Call the function to update the avatar initials when the page loads
+updateAvatarInitials();
 
-// Close Modals
-closeModalButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        userModal.style.display = "none";
-        productModal.style.display = "none";
+// Toggle password visibility
+document.querySelectorAll(".toggle-password").forEach((button) => {
+    button.addEventListener("click", function (e) {
+        e.preventDefault();
+        const input = this.previousElementSibling;
+        const type =
+            input.getAttribute("type") === "password" ? "text" : "password";
+        input.setAttribute("type", type);
+        this.querySelector("svg").classList.toggle("fa-eye");
+        this.querySelector("svg").classList.toggle("fa-eye-slash");
     });
 });
 
-// Save User
-userForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const id = userForm.dataset.id;
-    const name = document.getElementById("user-name").value;
-    const email = document.getElementById("user-email").value;
-    const role = document.getElementById("user-role").value;
+// Enable/Disable Delete Account button based on checkbox
+const deleteConfirmCheckbox = document.getElementById("delete-confirm");
+const deleteAccountButton = document.querySelector(".btn-delete-account");
+const deletePasswordInput = document.getElementById("delete-password");
 
-    if (id) {
-        // Edit existing user
-        const userIndex = users.findIndex((user) => user.id == id);
-        users[userIndex] = { id: +id, name, email, role };
-    } else {
-        // Add new user
-        const newUser = { id: users.length + 1, name, email, role };
-        users.push(newUser);
-    }
-
-    renderUsers();
-    userModal.style.display = "none";
+deleteConfirmCheckbox.addEventListener("change", function () {
+    deleteAccountButton.disabled =
+        !this.checked || deletePasswordInput.value.trim() === "";
 });
 
-// Save Product
-productForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const id = productForm.dataset.id;
-    const name = document.getElementById("product-name").value;
-    const price = document.getElementById("product-price").value;
-    const description = document.getElementById("product-description").value;
-
-    if (id) {
-        // Edit existing product
-        const productIndex = products.findIndex((product) => product.id == id);
-        products[productIndex] = { id: +id, name, price, description };
-    } else {
-        // Add new product
-        const newProduct = { id: products.length + 1, name, price, description };
-        products.push(newProduct);
-    }
-
-    renderProducts();
-    productModal.style.display = "none";
+deletePasswordInput.addEventListener("input", function () {
+    deleteAccountButton.disabled =
+        !deleteConfirmCheckbox.checked || this.value.trim() === "";
 });
 
-// Edit User
-function editUser(id) {
-    const user = users.find((user) => user.id == id);
-    openUserModal(user);
-}
+// Handle Edit and Save buttons for Personal Info
+const personalInfoEditButton = document.querySelector(
+    ".info:nth-child(1) .btn-edit"
+);
+const personalInfoFields = document.querySelectorAll(".info:nth-child(1) p");
+const personalInfoSaveButton = document.querySelector(
+    ".info:nth-child(1) .btn-save"
+);
 
-// Delete User
-function deleteUser(id) {
-    users = users.filter((user) => user.id != id);
-    renderUsers();
-}
+personalInfoEditButton.addEventListener("click", function () {
+    // Hide the Edit button and show the Save button
+    personalInfoEditButton.style.display = "none";
+    personalInfoSaveButton.style.display = "inline-block";
 
-// Edit Product
-function editProduct(id) {
-    const product = products.find((product) => product.id == id);
-    openProductModal(product);
-}
+    // Make personal info fields editable
+    personalInfoFields.forEach((field) => {
+        if (field.textContent.includes(":")) {
+            const key = field.textContent.split(":")[0].trim();
+            const value = field.textContent.split(":")[1].trim();
+            field.innerHTML = `<strong>${key}:</strong> <input type="text" value="${value}" />`;
+        }
+    });
+});
 
-// Delete Product
-function deleteProduct(id) {
-    products = products.filter((product) => product.id != id);
-    renderProducts();
-}
+personalInfoSaveButton.addEventListener("click", function () {
+    // Save personal info changes
+    personalInfoFields.forEach((field) => {
+        const input = field.querySelector("input");
+        if (input) {
+            const key = field
+                .querySelector("strong")
+                .textContent.replace(":", "");
+            const value = input.value;
+            field.innerHTML = `<strong>${key}:</strong> ${value}`;
+        }
+    });
 
-// Event Listeners for Add Buttons
-document.querySelector(".btn-add-user").addEventListener("click", () => openUserModal());
-document.querySelector(".btn-add-product").addEventListener("click", () => openProductModal());
+    // Hide the Save button and show the Edit button
+    personalInfoSaveButton.style.display = "none";
+    personalInfoEditButton.style.display = "inline-block";
 
-// Initial Render
-renderUsers();
-renderProducts();
+    // Update the avatar initials after saving
+    updateAvatarInitials();
+});
+
+// Handle Delete Account button
+deleteAccountButton.addEventListener("click", function () {
+    window.location.href = "../pages/index.html"; // Redirect to the homepage after deletion
+});
+
+// Menu toggle functionality
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", function (event) {
+        navLinks.classList.toggle("active");
+        event.stopPropagation(); // Prevents immediate closing when clicking the menu button
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (
+            navLinks.classList.contains("active") &&
+            !navLinks.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ) {
+            navLinks.classList.remove("active");
+        }
+    });
+
+    // Prevent menu from closing when clicking inside the menu itself
+    navLinks.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+
+    // Get modal elements
+    const userModal = document.getElementById("userModal");
+    const productModal = document.getElementById("productModal");
+
+    // Get buttons to open modals
+    const addUserButton = document.querySelector(".btn-add-user");
+    const addProductButton = document.querySelector(".btn-add-product");
+
+    // Get close buttons
+    const closeButtons = document.querySelectorAll(".close");
+
+    // Open User Modal
+    addUserButton.addEventListener("click", function () {
+        userModal.style.display = "block";
+    });
+
+    // Open Product Modal
+    addProductButton.addEventListener("click", function () {
+        productModal.style.display = "block";
+    });
+
+    // Close Modals
+    closeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            userModal.style.display = "none";
+            productModal.style.display = "none";
+        });
+    });
+
+    // Close Modals when clicking outside
+    window.addEventListener("click", function (event) {
+        if (event.target === userModal) {
+            userModal.style.display = "none";
+        }
+        if (event.target === productModal) {
+            productModal.style.display = "none";
+        }
+    });
+
+    // Handle User Form Submission
+    document
+        .getElementById("userForm")
+        .addEventListener("submit", function (event) {
+            event.preventDefault();
+            const userName = document.getElementById("userName").value;
+            const userEmail = document.getElementById("userEmail").value;
+            const userPassword = document.getElementById("userPassword").value;
+            const userRole = document.getElementById("userRole").value;
+
+            // Add logic to save user data (e.g., send to backend)
+            console.log("User Data:", {
+                userName,
+                userEmail,
+                userPassword,
+                userRole,
+            });
+
+            // Close modal after submission
+            userModal.style.display = "none";
+        });
+
+    // Handle Product Form Submission
+    document
+        .getElementById("productForm")
+        .addEventListener("submit", function (event) {
+            event.preventDefault();
+            const productName = document.getElementById("productName").value;
+            const productPrice = document.getElementById("productPrice").value;
+            const productDescription =
+                document.getElementById("productDescription").value;
+            const productImage =
+                document.getElementById("productImage").files[0];
+
+            // Create a FormData object to handle file uploads
+            const formData = new FormData();
+            formData.append("name", productName);
+            formData.append("price", productPrice);
+            formData.append("description", productDescription);
+            formData.append("image", productImage);
+
+            // Log the FormData (replace with actual backend submission logic)
+            for (let [key, value] of formData.entries()) {
+                console.log(key, value);
+            }
+
+            // Close modal after submission
+            productModal.style.display = "none";
+        });
+
+    // Handle Password Update
+    document
+        .querySelector(".password-section .btn-save")
+        .addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const currentPassword =
+                document.getElementById("current-password").value;
+            const newPassword = document.getElementById("new-password").value;
+            const confirmPassword =
+                document.getElementById("confirm-password").value;
+
+            // Validate inputs
+            if (!currentPassword || !newPassword || !confirmPassword) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            if (newPassword !== confirmPassword) {
+                alert("New password and confirm password do not match.");
+                return;
+            }
+
+            // Add logic to update password (e.g., send to backend)
+            console.log("Password Update Data:", {
+                currentPassword,
+                newPassword,
+                confirmPassword,
+            });
+
+            // Clear fields after submission
+            document.getElementById("current-password").value = "";
+            document.getElementById("new-password").value = "";
+            document.getElementById("confirm-password").value = "";
+
+            alert("Password updated successfully!");
+        });
+});
