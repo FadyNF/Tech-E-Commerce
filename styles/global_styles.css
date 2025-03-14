@@ -1,0 +1,16 @@
+:root {
+  /* First Palette */
+  --light-lavender: #eaeaf9;
+  --muted-purple: #7f77c9;
+  --deep-purple: #5943a6;
+  --sky-blue: #6db2e6;
+  --navy-blue: #0d2a58;
+  --coral-pink: #ff6f61;
+
+  /* Second Palette */
+  --cream-white: #fff9f4;
+  --cool-blue: #549bd0;
+  --steel-blue: #29679a;
+  --deep-teal: #00578e;
+  --midnight-blue: #022c58;
+}
