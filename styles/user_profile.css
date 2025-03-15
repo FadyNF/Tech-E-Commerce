@@ -9,16 +9,13 @@
 
 /* General Styles */
 body {
-    background: radial-gradient(
-        circle at bottom,
-        var(--cool-blue),
-        var(--deep-purple)
-    ); /* Updated to match admin profile */
+    background: linear-gradient(135deg, #6db2e6, #5943a6);
     color: var(--cream-white); /* Updated to match admin profile */
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-}
+  }
+
 
 /* Navbar Styles */
 .navbar {
@@ -183,12 +180,13 @@ body {
 
 /* Profile Card */
 .profile-card {
-    background: rgba(0, 0, 0, 0.5); /* Updated to match admin profile */
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--navy-blue); /* Updated to match admin profile */
-    backdrop-filter: blur(10px); /* Added blur effect */
+     background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--navy-blue);
+  backdrop-filter: blur(10px);
 }
 
 /* Profile Header */
@@ -277,60 +275,65 @@ body {
 }
 
 .info {
-    background: rgba(10, 21, 18, 0.7); /* Updated to match admin profile */
+    background: #eaeaf93a;
     padding: 20px;
     border-radius: 12px;
     position: relative;
     transition: all 0.3s ease;
-    border: 1px solid var(--navy-blue); /* Updated to match admin profile */
+    border: none;
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
 .info:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-    border-color: var(--sky-blue); /* Updated to match admin profile */
-}
-
-.info h3 {
+    border-color: var(--sky-blue);
+  }
+  
+  .info h3 {
     margin-bottom: 15px;
     font-size: 18px;
-    color: var(--sky-blue); /* Updated to match admin profile */
+    color: var(--deep-purple);
     font-weight: 600;
-}
+  }
+  
 
-.info p {
+  .info p {
     font-size: 15px;
     margin-bottom: 8px;
-    color: var(--light-lavender); /* Updated to match admin profile */
-}
-
-.info strong {
-    color: var(--cream-white); /* Updated to match admin profile */
+    color: var(--light-lavender);
+  }
+  
+  .info strong {
+    color: var(--cream-white);
     font-weight: 500;
-}
-
+  }
+  
 /* Inputs */
 .info input,
 .info textarea {
     width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid var(--navy-blue); /* Updated to match admin profile */
-    background: rgba(0, 0, 0, 0.5);
-    color: var(--cream-white); /* Updated to match admin profile */
-    border-radius: 8px;
-    font-size: 15px;
-    outline: none;
-    transition: all 0.3s;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid var(--navy-blue);
+  background: transparent;
+  color: var(--cream-white);
+  border-bottom: 3px solid var(--cream-white);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s;
 }
 
 .info input:focus,
 .info textarea:focus {
-    border-color: var(--sky-blue); /* Updated to match admin profile */
-    box-shadow: 0 0 0 2px rgba(109, 178, 230, 0.2); /* Updated to match admin profile */
+    border-color: var(--navy-blue);
+  box-shadow: 0 0 0 2px rgba(109, 178, 230, 0.2);
 }
 
 /* Buttons */
@@ -338,35 +341,32 @@ body {
 .btn-save {
     margin-top: 15px;
     padding: 10px 18px;
-    border-radius: 8px;
+    border-radius: 20px;
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
     outline: none;
+    margin-top: auto;
+    align-self: flex-start;
+    background: linear-gradient(45deg, var(--muted-purple), var(--deep-purple));
+    border: none;
+    color: var(--cream-white);
 }
 
-.btn-edit {
-    background: transparent;
-    border: 1px solid var(--cream-white); /* Updated to match admin profile */
-    color: var(--cream-white); /* Updated to match admin profile */
-}
 
 .btn-edit:hover {
-    background: rgba(109, 178, 230, 0.1); /* Updated to match admin profile */
-    border-color: var(--sky-blue); /* Updated to match admin profile */
-}
-
-.btn-save {
-    background: var(--sky-blue); /* Updated to match admin profile */
-    border: none;
-    color: var(--cream-white); /* Updated to match admin profile */
+    background: linear-gradient(-45deg, var(--sky-blue), var(--muted-purple));
+    border-color: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(109, 178, 230, 0.3);
 }
 
 .btn-save:hover {
-    background: var(--cool-blue); /* Updated to match admin profile */
+    background: linear-gradient(-45deg, var(--sky-blue), var(--muted-purple));
+    border-color: none;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(109, 178, 230, 0.3); /* Updated to match admin profile */
+    box-shadow: 0 4px 10px rgba(109, 178, 230, 0.3);
 }
 
 /* Password Section Styles */
@@ -390,18 +390,28 @@ body {
 .password-input-wrapper input {
     padding-right: 40px;
 }
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none;
+  pointer-events: none;
+}
 
 .toggle-password {
     position: absolute;
-    right: 10px;
-    background: transparent;
-    border: none;
-    color: var(--sky-blue); /* Updated to match admin profile */
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: var(--navy-blue);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .toggle-password:hover {
@@ -430,7 +440,7 @@ body {
 
 /* Delete Account Section */
 .delete-account-section {
-    border-left: 3px solid var(--coral-pink); /* Updated to match admin profile */
+    border-left: 3px solid rgba(157, 13, 13, 0.495);/* Updated to match admin profile */
     display: flex;
     flex-direction: column;
 }
@@ -464,7 +474,7 @@ body {
     color: white;
     border: none;
     padding: 10px 18px;
-    border-radius: 8px;
+    border-radius: 20px;
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
