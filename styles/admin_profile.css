@@ -1,12 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("/styles/global_styles.css");
+
 /* Base Styles */
 * {
     box-sizing: border-box;
 }
 
-/* General Styles */
 body {
-    background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
-    color: white;
+    background: radial-gradient(
+        circle at bottom,
+        var(--cool-blue),
+        var(--deep-purple)
+    ); /* Updated to match admin profile */
+    color: var(--cream-white); /* Updated to match admin profile */
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
@@ -18,7 +24,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 25px 5%;
-    background: rgba(0, 0, 0, 0.9);
+    background: #022c58a1;
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
@@ -28,20 +35,20 @@ body {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 600;
-    color: #85a392;
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--navy-blue);
 }
 
 .logo span {
-    color: #fff;
+    color: var(--cream-white);
 }
 
 .menu-toggle {
     display: none;
     background: transparent;
     border: none;
-    color: white;
+    color: var(--cream-white);
     font-size: 24px;
     cursor: pointer;
 }
@@ -52,37 +59,27 @@ body {
     gap: 20px;
     padding: 10px 20px;
     border-radius: 30px;
-    border-color: #f2f2f2;
-    border-style: solid;
-    border-width: 0.1px;
+    border: 1px solid var(--cream-white);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-links li a {
     text-decoration: none;
-    color: white;
+    color: var(--cream-white);
     font-weight: 400;
     padding: 8px 12px;
     transition: 0.3s;
 }
 
 .nav-links li a:hover {
-    color: #85a392;
+    color: var(--sky-blue);
 }
 
 .btn-outline {
-    padding: 10px 20px;
-    border: 2px solid #fff;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.btn-outline {
-    position: relative;
     padding: 14px 28px;
-    border: none;
+    border: 2px solid var(--muted-purple);
+    background: transparent;
+    color: var(--cream-white);
     border-radius: 30px;
     font-size: 16px;
     font-weight: 600;
@@ -92,18 +89,16 @@ body {
     overflow: hidden;
 }
 
-/* Primary Button */
-.btn-primary {
-    background: linear-gradient(45deg, #4caf50, #4b7e72);
-    color: #000;
-    box-shadow: 0px 4px 10px rgba(133, 163, 146, 0.6);
+.btn-outline:hover {
+    background: linear-gradient(var(--sky-blue), var(--deep-purple));
+    color: var(--cream-white);
 }
 
-/* Outline Button */
-.btn-outline {
-    border: 2px solid #85a392;
-    color: #85a392;
-    background: transparent;
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(45deg, var(--muted-purple), var(--deep-purple));
+    color: var(--cream-white);
+    box-shadow: 0px 4px 10px var(--sky-blue);
 }
 
 /* Glossy Reflection */
@@ -139,13 +134,13 @@ body {
 /* Moving Glow Effect */
 @keyframes glowing {
     0% {
-        box-shadow: 0px 4px 15px rgba(133, 163, 146, 0.6);
+        box-shadow: 0px 4px 15px rgba(84, 154, 208, 0.55);
     }
     50% {
-        box-shadow: 0px 4px 20px rgba(133, 163, 146, 0.8);
+        box-shadow: 0px 4px 20px rgba(84, 154, 208, 0.76);
     }
     100% {
-        box-shadow: 0px 4px 15px rgba(133, 163, 146, 0.6);
+        box-shadow: 0px 4px 15px rgba(84, 154, 208, 0.55);
     }
 }
 
@@ -179,11 +174,11 @@ body {
 
 /* Profile Card */
 .profile-card {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid #1a2b25;
+    border: 1px solid var(--navy-blue);
     backdrop-filter: blur(10px);
 }
 
@@ -194,7 +189,7 @@ body {
     align-items: center;
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #1a2b25;
+    border-bottom: 1px solid var(--navy-blue);
 }
 
 .avatar {
@@ -202,12 +197,13 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: #0a1512;
+    background: var(--navy-blue);
+    color: var(--cream-white);
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    border: 2px solid #4a7269;
+    border: 2px solid var(--sky-blue);
 }
 
 .completion-status {
@@ -217,14 +213,14 @@ body {
 .completion-status p {
     margin-bottom: 10px;
     font-size: 14px;
-    color: #aaa;
+    color: var(--light-lavender);
 }
 
 .progress-circle {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: #0a1512;
+    background: var(--midnight-blue);
     position: relative;
     display: flex;
     align-items: center;
@@ -239,7 +235,7 @@ body {
     right: 5px;
     bottom: 5px;
     border-radius: 50%;
-    background: conic-gradient(#5e8b7e 80%, transparent 80%);
+    background: conic-gradient(var(--sky-blue) 80%, transparent 80%);
 }
 
 .progress-circle::after {
@@ -250,7 +246,7 @@ body {
     right: 8px;
     bottom: 8px;
     border-radius: 50%;
-    background: #0a1512;
+    background: var(--midnight-blue);
 }
 
 .progress-circle span {
@@ -258,7 +254,7 @@ body {
     z-index: 1;
     font-weight: bold;
     font-size: 18px;
-    color: #5e8b7e;
+    color: var(--light-lavender);
 }
 
 /* Profile Details */
@@ -269,12 +265,12 @@ body {
 }
 
 .info {
-    background: rgba(10, 21, 18, 0.7);
+    background: var(--midnight-blue);
     padding: 20px;
     border-radius: 12px;
     position: relative;
     transition: all 0.3s ease;
-    border: 1px solid #1a2b25;
+    border: 1px solid var(--navy-blue);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -283,24 +279,24 @@ body {
 .info:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-    border-color: #4a7269;
+    border-color: var(--sky-blue);
 }
 
 .info h3 {
     margin-bottom: 15px;
     font-size: 18px;
-    color: #5e8b7e;
+    color: var(--deep-purple);
     font-weight: 600;
 }
 
 .info p {
     font-size: 15px;
     margin-bottom: 8px;
-    color: #ddd;
+    color: var(--light-lavender);
 }
 
 .info strong {
-    color: #ffffff;
+    color: var(--cream-white);
     font-weight: 500;
 }
 
@@ -323,40 +319,40 @@ body {
 
 .btn-edit {
     background: transparent;
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    border: 1px solid var(--cream-white);
+    color: var(--cream-white);
 }
 
 .btn-edit:hover {
-    background: rgba(94, 139, 126, 0.1);
-    border-color: #5e8b7e;
+    background: rgba(109, 178, 230, 0.1);
+    border-color: var(--sky-blue);
 }
 
 .btn-save,
 .btn-add-user,
 .btn-add-product {
-    background: #5e8b7e;
+    background: var(--sky-blue);
     border: none;
-    color: #ffffff;
+    color: var(--cream-white);
 }
 
 .btn-save:hover,
 .btn-add-user:hover,
 .btn-add-product:hover {
-    background: #4a7269;
+    background: var(--cool-blue);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(94, 139, 126, 0.3);
+    box-shadow: 0 4px 10px rgba(109, 178, 230, 0.3);
 }
 
 /* Delete Account Section */
 .delete-account-section {
-    border-left: 3px solid #993333;
+    border-left: 3px solid var(--coral-pink);
     display: flex;
     flex-direction: column;
 }
 
 .warning-text {
-    color: #ff6b6b;
+    color: var(--coral-pink);
     font-size: 14px;
     margin-bottom: 15px;
 }
@@ -371,7 +367,7 @@ body {
     width: 18px;
     height: 18px;
     margin-right: 10px;
-    accent-color: #5e8b7e;
+    accent-color: var(--sky-blue);
 }
 
 .confirmation-checkbox label {
@@ -380,7 +376,7 @@ body {
 }
 
 .btn-delete-account {
-    background: #993333;
+    background: var(--coral-pink);
     color: white;
     border: none;
     padding: 10px 18px;
@@ -395,7 +391,7 @@ body {
 }
 
 .btn-delete-account:hover {
-    background: #cc3333;
+    background: #ff4a3d; /* Slightly darker coral pink */
 }
 
 .btn-delete-account:disabled {
@@ -405,7 +401,7 @@ body {
 }
 
 .delete-account-section:hover {
-    border-color: #cc3333;
+    border-color: #ff4a3d; /* Slightly darker coral pink */
 }
 
 /* Password Section Styles */
@@ -417,7 +413,7 @@ body {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
-    color: #ddd;
+    color: var(--light-lavender);
 }
 
 .password-input-wrapper {
@@ -435,7 +431,7 @@ body {
     right: 10px;
     background: transparent;
     border: none;
-    color: #5e8b7e;
+    color: var(--sky-blue);
     cursor: pointer;
     padding: 0;
     display: flex;
@@ -448,9 +444,9 @@ body {
     width: 100%;
     padding: 12px;
     margin-top: 5px;
-    border: 1px solid #1a2b25;
+    border: 1px solid var(--navy-blue);
     background: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
+    color: var(--cream-white);
     border-radius: 8px;
     font-size: 15px;
     outline: none;
@@ -459,8 +455,8 @@ body {
 
 .info input:focus,
 .info textarea:focus {
-    border-color: #5e8b7e;
-    box-shadow: 0 0 0 2px rgba(94, 139, 126, 0.2);
+    border-color: var(--sky-blue);
+    box-shadow: 0 0 0 2px rgba(109, 178, 230, 0.2);
 }
 
 /* Modal Styles */
@@ -480,7 +476,7 @@ body {
     background: rgba(0, 0, 0, 0.9);
     margin: 10% auto;
     padding: 20px;
-    border: 1px solid #1a2b25;
+    border: 1px solid var(--navy-blue);
     border-radius: 12px;
     width: 90%;
     max-width: 500px;
@@ -489,12 +485,12 @@ body {
 }
 
 .modal-content h2 {
-    color: #5e8b7e;
+    color: var(--sky-blue);
     margin-bottom: 20px;
 }
 
 .close {
-    color: #aaa;
+    color: var(--light-lavender);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -502,7 +498,7 @@ body {
 }
 
 .close:hover {
-    color: #fff;
+    color: var(--cream-white);
 }
 
 /* Form Styles */
@@ -513,7 +509,7 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #ddd;
+    color: var(--light-lavender);
     font-size: 14px;
 }
 
@@ -522,9 +518,9 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #1a2b25;
+    border: 1px solid var(--navy-blue);
     background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    color: var(--cream-white);
     border-radius: 8px;
     font-size: 14px;
     outline: none;
@@ -534,13 +530,13 @@ body {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: #5e8b7e;
-    box-shadow: 0 0 0 2px rgba(94, 139, 126, 0.2);
+    border-color: var(--sky-blue);
+    box-shadow: 0 0 0 2px rgba(109, 178, 230, 0.2);
 }
 
 button[type="submit"] {
-    background: #5e8b7e;
-    color: #fff;
+    background: var(--sky-blue);
+    color: var(--cream-white);
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
@@ -550,9 +546,9 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: #4a7269;
+    background: var(--cool-blue);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(94, 139, 126, 0.3);
+    box-shadow: 0 4px 10px rgba(109, 178, 230, 0.3);
 }
 
 /* Password Input Wrapper */
@@ -572,7 +568,7 @@ button[type="submit"]:hover {
     right: 10px;
     background: transparent;
     border: none;
-    color: #5e8b7e;
+    color: var(--sky-blue);
     cursor: pointer;
     padding: 0;
     display: flex;
@@ -581,16 +577,16 @@ button[type="submit"]:hover {
 }
 
 .toggle-password:hover {
-    color: #fff;
+    color: var(--cream-white);
 }
 
 /* File Input Styling */
 .form-group input[type="file"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #1a2b25;
+    border: 1px solid var(--navy-blue);
     background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    color: var(--cream-white);
     border-radius: 8px;
     font-size: 14px;
     outline: none;
@@ -598,8 +594,8 @@ button[type="submit"]:hover {
 }
 
 .form-group input[type="file"]:focus {
-    border-color: #5e8b7e;
-    box-shadow: 0 0 0 2px rgba(94, 139, 126, 0.2);
+    border-color: var(--sky-blue);
+    box-shadow: 0 0 0 2px rgba(109, 178, 230, 0.2);
 }
 
 /* Dashboard Overview Section */
@@ -615,31 +611,31 @@ button[type="submit"]:hover {
     padding: 15px;
     border-radius: 8px;
     text-align: center;
-    border: 1px solid #1a2b25;
+    border: 1px solid var(--navy-blue);
     transition: all 0.3s ease;
 }
 
 .metric:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-    border-color: #4a7269;
+    border-color: var(--sky-blue);
 }
 
 .metric-value {
     font-size: 24px;
     font-weight: bold;
-    color: #5e8b7e;
+    color: var(--sky-blue);
 }
 
 .metric-label {
     font-size: 14px;
-    color: #ddd;
+    color: var(--light-lavender);
 }
 
 /* Password Management Section */
 .password-section {
     margin-top: 20px;
-    border-top: 1px solid #1a2b25;
+    border-top: 1px solid var(--navy-blue);
     padding-top: 20px;
 }
 
@@ -651,7 +647,7 @@ button[type="submit"]:hover {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
-    color: #ddd;
+    color: var(--light-lavender);
 }
 
 .password-input-wrapper {
@@ -670,7 +666,7 @@ button[type="submit"]:hover {
     right: 10px;
     background: transparent;
     border: none;
-    color: #5e8b7e;
+    color: var(--sky-blue);
     cursor: pointer;
     padding: 0;
     display: flex;
@@ -679,7 +675,7 @@ button[type="submit"]:hover {
 }
 
 .toggle-password:hover {
-    color: #fff;
+    color: var(--cream-white);
 }
 
 .password-strength {
@@ -702,7 +698,7 @@ button[type="submit"]:hover {
 }
 
 .btn-save {
-    background: #5e8b7e;
+    background: var(--sky-blue);
     color: white;
     border: none;
     padding: 10px 18px;
@@ -715,9 +711,9 @@ button[type="submit"]:hover {
 }
 
 .btn-save:hover {
-    background: #4a7269;
+    background: var(--cool-blue);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(94, 139, 126, 0.3);
+    box-shadow: 0 4px 10px rgba(109, 178, 230, 0.3);
 }
 
 /* Responsive Styles */
@@ -774,5 +770,92 @@ button[type="submit"]:hover {
         padding: 10px 15px;
         text-decoration: none;
         transition: color 0.3s ease-in-out;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 15px; /* Adjusted padding for smaller screens */
+    }
+
+    .logo {
+        font-size: 20px; /* Smaller logo for mobile */
+    }
+
+    /* Profile Container Adjustments */
+    .profile-container {
+        margin: 120px 10px; /* Adjusted margin for smaller screens */
+        padding: 10px; /* Reduced padding */
+        width: calc(100% - 20px); /* Ensure container fits within the viewport */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    /* Profile Card Adjustments */
+    .profile-card {
+        padding: 15px; /* Reduced padding */
+        width: 100%; /* Ensure card fits within the container */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    /* Profile Details Adjustments */
+    .profile-details {
+        grid-template-columns: 1fr; /* Stack info divs vertically */
+        gap: 15px; /* Reduced gap between info divs */
+        width: 100%; /* Ensure details fit within the container */
+    }
+
+    .info {
+        padding: 15px; /* Reduced padding */
+        width: 100%; /* Ensure info divs fit within the container */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .info h3 {
+        font-size: 16px; /* Smaller heading */
+        margin-bottom: 10px; /* Reduced margin */
+    }
+
+    .info p {
+        font-size: 14px; /* Smaller text */
+    }
+
+    /* Buttons Adjustments */
+    .btn-edit,
+    .btn-save,
+    .btn-delete-account {
+        padding: 8px 16px; /* Smaller buttons */
+        font-size: 12px; /* Smaller font size */
+        width: 100%; /* Full-width buttons for better usability */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    /* Password Section Adjustments */
+    .password-field label {
+        font-size: 12px; /* Smaller label */
+    }
+
+    .password-input-wrapper input {
+        padding-right: 30px; /* Adjusted padding for toggle button */
+        width: 100%; /* Full-width input for better usability */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .toggle-password {
+        right: 8px; /* Adjusted position for toggle button */
+    }
+
+    /* Delete Account Section Adjustments */
+    .delete-account-section {
+        padding: 15px; /* Reduced padding */
+        width: 100%; /* Ensure section fits within the container */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .warning-text {
+        font-size: 12px; /* Smaller warning text */
+    }
+
+    .confirmation-checkbox label {
+        font-size: 12px; /* Smaller checkbox label */
     }
 }

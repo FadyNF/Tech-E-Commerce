@@ -17,7 +17,7 @@ function updateAvatarInitials() {
 
         // Update the avatar's content using inline styles
         avatar.style.position = "relative"; // Ensure the avatar is positioned correctly
-        avatar.innerHTML = `<span style="font-size: 32px; font-weight: bold; color: #5E8B7E;">${initials}</span>`;
+        avatar.innerHTML = `<span style="font-size: 32px; font-weight: bold; color: var(--cream-white);">${initials}</span>`;
     }
 }
 
