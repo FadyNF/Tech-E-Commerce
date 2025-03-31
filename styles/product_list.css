@@ -13,7 +13,11 @@ body {
   flex-direction: column; /* Stack elements vertically */
   align-items: center; /* Center horizontally */
   min-height: 100vh;
-  background: linear-gradient(135deg, #6db2e6, #5943a6);
+  background: radial-gradient(
+    circle at center,
+    var(--teal-primary),
+    var(--dark-teal)
+  );
 }
 /* Initial hidden state */
 
@@ -23,7 +27,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 25px 5%;
-  background: #022c58a1;
+  background: rgba(2, 44, 88, 0.512);
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
@@ -33,13 +37,11 @@ body {
   flex-wrap: wrap;
 }
 
-
 .logo {
   font-size: 30px;
   font-weight: bolder;
-  color: var(--midnight-blue);
+  color: var(--orange-primary);
 }
-
 .logo span {
   color: #fff;
 }
@@ -48,7 +50,7 @@ body {
   display: none;
   background: transparent;
   border: none;
-  color: white;
+  color: var(--cream-white);
   font-size: 24px;
   cursor: pointer;
 }
@@ -59,7 +61,7 @@ body {
   gap: 20px;
   padding: 10px 20px;
   border-radius: 30px;
-  border-color: #f2f2f2;
+  border-color: var(--cream-white);
   border-style: solid;
   border-width: 0.1px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -67,14 +69,14 @@ body {
 
 .nav-links li a {
   text-decoration: none;
-  color: white;
+  color: var(--cream-white);
   font-weight: 400;
   padding: 8px 12px;
   transition: 0.3s;
 }
 
 .nav-links li a:hover {
-  color: var(--sky-blue);
+  color: var(--orange-primary);
 }
 
 .btn-outline {
@@ -86,7 +88,7 @@ body {
   border-radius: 5px;
 }
 .btn-outline:hover {
-  background: linear-gradient( #6db2e6, #5943a6);
+  background: linear-gradient(var(--teal-primary), var(--dark-teal));
   color: var(--cream-white);
 }
 
@@ -106,16 +108,15 @@ body {
 
 /* Primary Button */
 .btn-primary {
-  background: linear-gradient(45deg, #7f77c9, #5943a6);
+  background: linear-gradient(var(--orange-primary), var(--orange-secondary));
   color: var(--cream-white);
-  box-shadow: 0px 4px 10px #6db2e6;
+  box-shadow: 0px 4px 10px var(--teal-primary);
 }
 
 /* Outline Button */
 .btn-outline {
-  border: 2px solid var(--muted-purple);
   color: var(--cream-white);
-  background: transparent;
+  background: linear-gradient(var(--teal-primary), var(--dark-teal));
 }
 
 /* Glossy Reflection */
@@ -129,13 +130,12 @@ body {
   height: 200%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.171) 10%,
+    rgba(93, 92, 92, 0.171) 10%,
     transparent 60%
   );
   transition: all 0.3s ease;
   opacity: 0;
 }
-
 /* Hover Effect */
 .btn-primary:hover,
 .btn-outline:hover {
@@ -208,7 +208,7 @@ body {
   transform: translateX(-50%); /* Ensure perfect centering */
   width: 80px; /* Underline width */
   height: 4px; /* Underline thickness */
-  background: var(--deep-purple); /* Underline color */
+  background: var(--navy-blue); /* Underline color */
   border-radius: 2px; /* Optional: Rounded edges */
 }
 

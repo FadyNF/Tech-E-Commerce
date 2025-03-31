@@ -13,7 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #6db2e6, #5943a6);
+  background: linear-gradient(135deg, var(--teal-primary),var(--dark-teal));
 }
 
 .wrapper {
@@ -21,9 +21,9 @@ body {
   width: 750px;
   height: 450px;
   background: rgba(255, 255, 255, 0.9);
-  border: 2px solid 6db2e6 (255, 255, 255, 0.3);
+  border: 2px solid var(--teal-primary) (255, 255, 255, 0.3);
   border-radius: 10px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   backdrop-filter: blur(10px);
 }
@@ -47,7 +47,7 @@ body {
   margin-bottom: 10px;
   position: relative;
   font-size: 32px;
-  color: var(--deep-purple);
+  color: var(--dark-teal);
   text-align: center;
 }
 
@@ -59,7 +59,7 @@ body {
   transform: translateX(-50%);
   width: 40px;
   height: 4px;
-  background: var(--sky-blue);
+  background: var(--teal-primary);
 }
 
 .form-box .input-box {
@@ -73,19 +73,19 @@ body {
   width: 100%;
   height: 100%;
   background: transparent;
-  color: var(--deep-purple);
+  color: var(--dark-teal);
   font-size: 16px;
   font-weight: 500;
   border: none;
   outline: none;
-  border-bottom: 2px solid var(--sky-blue);
+  border-bottom: 2px solid var(--teal-primary);
   transition: 0.5s;
   padding-right: 23px;
 }
 
 .input-box input:focus,
 .input-box input:valid {
-  border-bottom-color: var(--coral-pink);
+  border-bottom-color: var(--orange-primary);
 }
 
 .input-box label {
@@ -94,7 +94,7 @@ body {
   left: 0;
   transform: translateY(-50%);
   font-size: 16px;
-  color: var(--sky-blue);
+  color: var(--teal-primary);
   pointer-events: none;
   transition: 0.5s;
 }
@@ -102,7 +102,7 @@ body {
 .input-box input:focus ~ label,
 .input-box input:valid ~ label {
   top: -5px;
-  color: var(--coral-pink);
+  color: var(--orange-primary);
 }
 
 .input-box i {
@@ -111,19 +111,19 @@ body {
   right: 0;
   transform: translateY(-50%);
   font-size: 18px;
-  color: var(--sky-blue);
+  color: var(--teal-primary);
   transition: 0.5s;
 }
 
 .input-box input:focus ~ i,
 .input-box input:valid ~ i {
-  color: var(--coral-pink);
+  color: var(--orange-primary);
 }
 
 form button {
   width: 100%;
   height: 45px;
-  background: linear-gradient(135deg, #6db2e6, #5943a6);
+  background: var(--login-btn);
   color: white;
   border: none;
   outline: none;
@@ -137,22 +137,6 @@ form button {
   transition: transform 0.4s ease, background 0.4s ease;
 }
 
-form button {
-  width: 100%;
-  height: 45px;
-  background: linear-gradient(135deg, #6db2e6, #5943a6);
-  color: white;
-  border: none;
-  outline: none;
-  border-radius: 40px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: transform 0.4s ease, background 0.4s ease;
-}
 
 form button::before {
   content: "";
@@ -161,16 +145,11 @@ form button::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: conic-gradient(from 0deg, #ff6f61, #5943a6, #6db2e6, #ff6f61);
+  background: var(--btn-hover);
   z-index: -1;
   transition: opacity 0.5s ease;
   opacity: 0;
   border-radius: inherit;
-}
-
-form button:hover {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, #ff6f61, #5943a6);
 }
 
 form button:hover::before {
@@ -183,20 +162,20 @@ form button:active {
 
 form .linkTxt {
   font-size: 14px;
-  color: var(--deep-purple);
+  color: var(--dark-teal);
   text-align: center;
   margin: 20px 0 10px;
 }
 
 .linkTxt p a {
-  color: var(--sky-blue);
+  color: var(--teal-primary);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .linkTxt p a:hover {
-  color: var(--coral-pink);
+  color: var(--orange-primary);
   text-decoration: underline;
 }
 
@@ -233,7 +212,7 @@ form .linkTxt {
 
 .wrapper .info-text h2 {
   font-size: 36px;
-  color: var(--cream-white);
+  color: var(--white);
   line-height: 1.3;
   text-transform: uppercase;
 }
@@ -264,11 +243,7 @@ form .linkTxt {
   right: 0;
   width: 850px;
   height: 600px;
-  background: linear-gradient(
-    135deg,
-    #6db2e6,
-    #5943a6
-  ); /* Gradient background */
+  background: var(--orange-gradient);
   transform: rotate(10deg) skewY(40deg);
   transform-origin: bottom right;
   transition: 1.5s ease;
