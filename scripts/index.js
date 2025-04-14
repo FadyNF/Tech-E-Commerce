@@ -1,116 +1,108 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const hiddenElements = document.querySelectorAll(".hidden");
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", () => {
+  // Dropdown functionality
+  const dropdowns = document.querySelectorAll(".w-dropdown");
 
-    // Intersection Observer for animations
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                }
-            });
-        },
-        { threshold: 0.1 }
-    );
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".w-dropdown-toggle");
+    const menu = dropdown.querySelector(".w-dropdown-list");
 
-    hiddenElements.forEach((el) => observer.observe(el));
+    if (toggle && menu) {
+      toggle.addEventListener("click", e => {
+        e.preventDefault();
+        const isOpen = menu.style.display === "block";
 
-    // Menu toggle functionality
-    menuToggle.addEventListener("click", function (event) {
-        navLinks.classList.toggle("active");
-        event.stopPropagation(); // Prevents immediate closing when clicking the menu button
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", function (event) {
-        if (
-            navLinks.classList.contains("active") &&
-            !navLinks.contains(event.target) &&
-            !menuToggle.contains(event.target)
-        ) {
-            navLinks.classList.remove("active");
-        }
-    });
-
-    // Prevent menu from closing when clicking inside the menu itself
-    navLinks.addEventListener("click", function (event) {
-        event.stopPropagation();
-    });
-
-    // Initialize carousels
-    setupCarousel(
-        ".trending",
-        ".product-grid",
-        ".product",
-        ".trending .prev-btn",
-        ".trending .next-btn",
-        ".trending .indicator"
-    );
-    setupCarousel(
-        ".categories",
-        ".category-grid",
-        ".category",
-        ".categories .prev-btn",
-        ".categories .next-btn",
-        ".categories .indicator"
-    );
-
-    function setupCarousel(
-        sectionSelector,
-        gridSelector,
-        itemSelector,
-        prevBtnSelector,
-        nextBtnSelector,
-        indicatorsSelector
-    ) {
-        const section = document.querySelector(sectionSelector);
-        if (!section) return;
-
-        const grid = section.querySelector(gridSelector);
-        const items = section.querySelectorAll(itemSelector);
-        const prevBtn = section.querySelector(prevBtnSelector);
-        const nextBtn = section.querySelector(nextBtnSelector);
-        const indicators = section.querySelectorAll(indicatorsSelector);
-
-        let currentIndex = 0;
-
-        if (!grid || !items.length || !prevBtn || !nextBtn) return;
-
-        prevBtn.addEventListener("click", () => {
-            currentIndex = Math.max(0, currentIndex - 1);
-            scrollToItem(currentIndex);
-            updateIndicators();
+        // Close all other dropdowns
+        document.querySelectorAll(".w-dropdown-list").forEach(d => {
+          if (d !== menu) d.style.display = "none";
         });
 
-        nextBtn.addEventListener("click", () => {
-            currentIndex = Math.min(items.length - 1, currentIndex + 1);
-            scrollToItem(currentIndex);
-            updateIndicators();
-        });
-
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener("click", () => {
-                currentIndex = index;
-                scrollToItem(currentIndex);
-                updateIndicators();
-            });
-        });
-
-        function scrollToItem(index) {
-            if (items[index]) {
-                grid.scrollTo({
-                    left: items[index].offsetLeft - grid.offsetLeft,
-                    behavior: "smooth",
-                });
-            }
-        }
-
-        function updateIndicators() {
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle("active", index === currentIndex);
-            });
-        }
+        // Toggle this dropdown
+        menu.style.display = isOpen ? "none" : "block";
+      });
     }
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", e => {
+    if (!e.target.closest(".w-dropdown")) {
+      document.querySelectorAll(".w-dropdown-list").forEach(menu => {
+        menu.style.display = "none";
+      });
+    }
+  });
+
+  // Mobile menu toggle functionality
+  const mobileMenuButton = document.querySelector(".nav-mobile-menu-button");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (mobileMenuButton && navMenu) {
+    mobileMenuButton.addEventListener("click", () => {
+      const isOpen = navMenu.style.display === "block";
+      navMenu.style.display = isOpen ? "none" : "block";
+    });
+  }
+
+  // Mega menu hover functionality
+  const megaMenuDropdowns = document.querySelectorAll(".nav-menu-dropdown[data-hover='false']");
+
+  megaMenuDropdowns.forEach(dropdown => {
+    const list = dropdown.querySelector(".w-dropdown-list");
+
+    if (list) {
+      dropdown.addEventListener("mouseenter", () => {
+        list.style.display = "block";
+      });
+
+      dropdown.addEventListener("mouseleave", () => {
+        list.style.display = "none";
+      });
+    }
+  });
+
+  // Smooth scroll effect for cards
+  const cardsWrapper = document.querySelector(".cards-wrapper");
+  if (cardsWrapper) {
+    cardsWrapper.addEventListener("wheel", e => {
+      e.preventDefault();
+      cardsWrapper.scrollBy({
+        top: e.deltaY * 0.5, // Adjust scrolling speed
+        behavior: "smooth"
+      });
+    });
+  }
+
+  // Button click alert
+  const buttons = document.querySelectorAll(".button");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      alert("You clicked the button!");
+    });
+  });
+
+  // Text button click alert
+  const textButton = document.querySelector(".text-button");
+  if (textButton) {
+    textButton.addEventListener("click", e => {
+      e.preventDefault();
+      alert("We will be in touch shortly!");
+    });
+  }
+
+  // Log page load
+  console.log("Page loaded and ready!");
 });
+
+// WebFont loading script to load specific Google Fonts
+WebFont.load({
+  google: { families: ["Manrope:regular", "DM Sans:regular"] }
+});
+
+// Webflow-specific script to add classes based on the device
+!(function (o, c) {
+  const n = c.documentElement;
+  const t = " w-mod-";
+  n.className += t + "js";
+  if ("ontouchstart" in o || (o.DocumentTouch && c instanceof DocumentTouch)) {
+    n.className += t + "touch";
+  }
+})(window, document);

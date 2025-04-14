@@ -1,37 +1,53 @@
 :root {
   /* Teal Colors */
-  --teal-light: #CBF3F0;
-  --teal-primary: #2EC4B6;
-  --dark-teal:#00578e;
+  --teal-light: #cbf3f0;
+  --teal-primary: #2ec4b6;
+  --dark-teal: #00578e;
 
   /* White */
-  --white: #FFFFFF;
+  --white: #ffffff;
 
   /* Orange/Yellow Accents */
-  --orange-light: #FFBF69;
-  --orange-primary: #FF9F1C;
-  --orange-secondary: #FFB941;
+  --orange-light: #ffbf69;
+  --orange-primary: #ff9f1c;
+  --orange-secondary: #ffb941;
+
+  /* First Palette */
+  --light-lavender: #eaeaf9;
+  --muted-purple: #7f77c9;
+  --deep-purple: #5943a6;
+  --sky-blue: #6db2e6;
+  --navy-blue: #0d2a58;
+  --coral-pink: #ff6f61;
+
+  /* Second Palette */
+  --cream-white: #fff9f4;
+  --cool-blue: #549bd0;
+  --steel-blue: #29679a;
+  --midnight-blue: #022c58;
+/*Gradients and animation*/
+--orange-gradient: linear-gradient(135deg, #ffbf69, #ff9f1c);
+--login-btn: linear-gradient(135deg, #2ec4b6, #00578e);
+--btn-hover: conic-gradient(from 0deg, #00578e, #ff9f1c, #2ec4b6, #00578e);
 
 
-   /* First Palette */
-   --light-lavender: #eaeaf9;
-   --muted-purple: #7f77c9;
-   --deep-purple: #5943a6;
-   --sky-blue: #6db2e6;
-   --navy-blue: #0d2a58;
-   --coral-pink: #ff6f61;
- 
-   /* Second Palette */
-   --cream-white: #fff9f4;
-   --cool-blue: #549bd0;
-   --steel-blue: #29679a;
-   --midnight-blue: #022c58;
+/**************************************************************************************/
+  /*WEB FLOW*/
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --text-color: #1f2937;
+  --text-light: #6b7280;
+  --text-inverse: #ffffff;
+  --bg-color: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-inverse: #111827;
+  --border-radius: 0.5rem;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+  /*WEB FLOW*/
 
-
-   /*Gradients and animation*/
-   --orange-gradient: linear-gradient(135deg, #FFBF69, #FF9F1C);
-   --login-btn:linear-gradient(135deg, #2EC4B6, #00578e);
-   --btn-hover:conic-gradient(from 0deg, #00578e, #FF9F1C, #2EC4B6, #00578e);
-   
 }
-
