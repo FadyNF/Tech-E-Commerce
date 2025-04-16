@@ -11,8 +11,8 @@ loginLink.onclick = () => {
 };
 
 const users = {
-  "admin@example.com": "Admin@123",
-  "user@example.com": "User@123",
+  "admin@example.com": "123",
+  "user@example.com": "123",
 };
 
 function showError(element, message) {
