@@ -1,140 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TechHive</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-        <link rel="icon" href="/media/index_media/spider-solid.svg" type="image/svg+xml">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-            rel="stylesheet"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechHive</title>
+    <link href="/styles/index.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      href="/media/index_media/TechHive-logo.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="/scripts/index.js" defer></script>
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="left-section">
+        <img
+          src="/media/index_media/TechHive-logo.png"
+          alt="TechHive Logo"
+          class="logo"
         />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-        <link rel="stylesheet" href="/styles/index.css" />
-        <script src="/scripts/index.js" defer></script>
-    </head>
-    <body>
-        <header>
-            <nav class="navbar">
-                <div class="logo">Tech<span>Hive</span></div>
-                <button class="menu-toggle" aria-label="Toggle navigation menu">
-                    ☰
-                </button>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Cart</a></li>
-                    <li><a href="/pages/user_profile.html">Profile</a></li>
-                    <li><a href="#">Comparison</a></li>
-                    <li><a href="/pages/admin_profile.html">More</a></li>
-                </ul>
-                <button
-                    class="btn-outline"
-                    onclick="window.location.href='/pages/login_signup.html'"
-                >
-                    Login
-                </button>
-            </nav>
-        </header>
-
-        <section class="hero hidden">
-            <div class="content">
-                <h1>Welcome to, TechHive</h1>
-                <h2>Next-Gen Tech at Your Fingertips</h2>
-                <p>
-                    Discover smart tech, premium accessories, and top
-                    gadgets—all in one place!
-                </p>
-                <div class="cta-buttons">
-                    <button class="btn-primary" onclick="location.href='/pages/product_list.html'">Shop Now</button>
-                    <button class="btn-outline">Explore More</button>
-                </div>
+        <h1 class="title">TechHive</h1>
+      </div>
+      <div class="mid-section">
+        <a href="/pages/index.html">Home</a>
+        <a href="#">About</a>
+        <a href="/pages/product_list.html">Shop</a>
+        <a href="#">Cart</a>
+        <a href="#">Comparison</a>
+      </div>
+      <div class="right-section">
+        <a href="/pages/login_signup.html">Login</a>
+      </div>
+    </div>
+    <section class="hero-1">
+      <div class="hero-content">
+        <div class="hero-text-container">
+          <div class="hero-main-text">
+            <h1 class="hero-title-line-1">Discover</h1>
+            <h1 class="hero-title-line-2">the latest</h1>
+            <h1 class="hero-title-line-3">tech trends</h1>
+            <h1 class="hero-title-line-4">and gadgets</h1>
+          </div>
+          
+          <div class="hero-side-content">
+            <p class="hero-subtitle">Explore our curated selection of cutting-edge devices, from laptops to headphones.</p>
+            <button class="hero-button">Start Shopping</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero-2">
+      <div class="glass-container">
+        <!-- Left Glass Card -->
+        <div class="glass-card text-card">
+          <h3 class="glass-category">GADGET BUZZ</h3>
+          <h2 class="glass-title">Step into tomorrow</h2>
+          <p class="glass-description">Dive into the latest tech marvels that elevate your lifestyle.</p>
+          <a href="#" class="glass-link">Explore </a>
+        </div>
+        
+        <!-- Right Glass Card (with image) -->
+        <div class="glass-card image-card" style="background-image: url('/media/index_media/backgrounds/photoCard1.png')">
+          <div class="image-card-content">
+            <h3 class="glass-category">NEXT-GEN GEAR</h3>
+            <h2 class="glass-title">Harness cutting-edge tech</h2>
+            <p class="glass-description">with our newest arrivals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero-3">
+      <div class="card-stack-container">
+        <ul class="cards">
+          <!-- Card 1 -->
+          <li class="card" id="card1">
+            <div class="card-body">
+              <div class="card-image" style="background-image: url('/media/index_media/backgrounds/card1.png')"></div>
+              <div class="card-content">
+                <h3 class="card-category">SMART DEVICES</h3>
+                <h2 class="card-title">Revolutionize Your Home</h2>
+                <p class="card-description">Discover intelligent devices that learn your habits and adapt to your lifestyle.</p>
+                <button class="card-button">Explore Now</button>
+              </div>
             </div>
-        </section>
-
-
-
-        <section class="categories hidden">
-            <h2>Shop by Category</h2>
-            <div class="category-grid hidden">
-                <div class="category">
-                    <img
-                        src="/media/index_media/elegant-smartphone-composition-removebg-preview.png"
-                        alt="Smartphones"
-                    />
-                    <h3>Smartphones</h3>
-                </div>
-                <div class="category">
-                    <img
-                        src="/media/index_media/laptops-removebg-preview.png"
-                        alt="Laptops"
-                    />
-                    <h3>Laptops</h3>
-                </div>
-                <div class="category">
-                    <img
-                        src="/media/index_media/watch-removebg-preview.png"
-                        alt="Accessories"
-                    />
-                    <h3>Accessories</h3>
-                </div>
+          </li>
+          
+          <!-- Card 2 -->
+          <li class="card" id="card2">
+            <div class="card-body">
+              <div class="card-image" style="background-image: url('/media/index_media/backgrounds/card2.png')"></div>
+              <div class="card-content">
+                <h3 class="card-category">AUDIO TECH</h3>
+                <h2 class="card-title">Hear Every Detail</h2>
+                <p class="card-description">Immerse yourself in crystal-clear sound with our premium audio equipment.</p>
+                <button class="card-button">Shop Audio</button>
+              </div>
             </div>
-            <!-- Carousel controls for mobile only -->
-            <div class="carousel-controls mobile-only">
-                <button class="carousel-control prev-btn">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="carousel-indicators">
-                    <div class="indicator active" data-index="0"></div>
-                    <div class="indicator" data-index="1"></div>
-                    <div class="indicator" data-index="2"></div>
-                </div>
-                <button class="carousel-control next-btn">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+          </li>
+          
+          <!-- Card 3 -->
+          <li class="card" id="card3">
+            <div class="card-body">
+              <div class="card-image" style="background-image: url('/media/index_media/backgrounds/card3.png')"></div>
+              <div class="card-content">
+                <h3 class="card-category">WORKSTATION</h3>
+                <h2 class="card-title">Productivity Redefined</h2>
+                <p class="card-description">Powerful tools designed to streamline your workflow and boost efficiency.</p>
+                <button class="card-button">View Collection</button>
+              </div>
             </div>
-        </section>
-
-        <footer class="footer hidden">
-            <div class="footer-container hidden">
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Customer Support</h3>
-                    <ul>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 TechHive. All Rights Reserved.</p>
-            </div>
-        </footer>
-    </body>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="hero-4">
+      <div class="hero-4-container">
+        <!-- Centered Header -->
+        <div class="hero-4-header">
+          <span class="tech-tips-label">Tech Tips</span>
+          <h2 class="hero-4-title">Get Your Gadget Queries Solved</h2>
+          <p class="hero-4-subtitle">Discover quick fixes and smart choices for your tech needs.</p>
+        </div>
+        
+        <!-- Left-Aligned Solutions -->
+        <div class="solution-list">
+          <div class="solution-item">
+            <h3 class="solution-heading">Device Setup</h3>
+            <p class="solution-subheading">Step-by-step guides for new gadgets</p>
+            <div class="divider"></div>
+          </div>
+          
+          <div class="solution-item">
+            <h3 class="solution-heading">Troubleshooting</h3>
+            <p class="solution-subheading">Fix common tech issues quickly</p>
+            <div class="divider"></div>
+          </div>
+          
+          <div class="solution-item">
+            <h3 class="solution-heading">Buying Guides</h3>
+            <p class="solution-subheading">Make informed purchase decisions</p>
+            <div class="divider"></div>
+          </div>
+          
+          <div class="solution-item">
+            <h3 class="solution-heading">Optimization</h3>
+            <p class="solution-subheading">Get the most from your devices</p>
+            <div class="divider"></div>
+          </div>
+        </div>
+        
+        <!-- Centered CTA -->
+        <div class="cta-wrapper">
+          <a href="#" class="compare-cta">Need Help? Compare Now</a>
+        </div>
+      </div>
+    </section>
+    <footer class="tech-footer">
+      <div class="footer-content">
+        <!-- Left-aligned CTA -->
+        <div class="footer-cta">
+          <h3>Explore the future of tech</h3>
+          <a href="#" class="footer-browse">Browse Now </a>
+        </div>
+        
+        <!-- Right-aligned links grid -->
+        <div class="footer-links-grid">
+          <div class="links-column">
+            <a href="#">Privacy</a>
+            <a href="#">Support</a>
+            <a href="#">Blog</a>
+          </div>
+          <div class="links-column">
+            <a href="#">Terms</a>
+            <a href="#">Careers</a>
+            <a href="#">Deals</a>
+          </div>
+        </div>
+        
+        <!-- Right-aligned contact info -->
+        <div class="footer-contact">
+          <p>Call us: 123 456 789</p>
+          <p>Email: contact@techhive.com</p>
+        </div>
+        
+        <!-- Far right social icons -->
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

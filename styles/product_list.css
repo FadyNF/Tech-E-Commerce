@@ -10,226 +10,146 @@
 
 body {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center horizontally */
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
-  background: radial-gradient(
-    circle at center,
-    var(--teal-primary),
-    var(--dark-teal)
-  );
+  background-image: url("/media/index_media/backgrounds/shopBG.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-color: var(--midnight-blue);
 }
-/* Initial hidden state */
 
-/* Navbar Styles */
-.navbar {
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 5%;
-  background: rgba(2, 44, 88, 0.512);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  padding: 1.5rem 5%;
   width: 100%;
-  flex-wrap: wrap;
+  top: 0;
+  background-color: #02162d97;
+  backdrop-filter: blur(10px);
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo {
-  font-size: 30px;
-  font-weight: bolder;
-  color: var(--orange-primary);
-}
-.logo span {
-  color: #fff;
+  height: 40px;
+  width: auto;
 }
 
-.menu-toggle {
-  display: none;
-  background: transparent;
-  border: none;
-  color: var(--cream-white);
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 10px 20px;
-  border-radius: 30px;
-  border-color: var(--cream-white);
-  border-style: solid;
-  border-width: 0.1px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: var(--cream-white);
-  font-weight: 400;
-  padding: 8px 12px;
-  transition: 0.3s;
-}
-
-.nav-links li a:hover {
-  color: var(--orange-primary);
-}
-
-.btn-outline {
-  padding: 10px 20px;
-  border: 2px solid var(--cream-white);
-  background: transparent;
-  color: var(--cream-white);
-  cursor: pointer;
-  border-radius: 5px;
-}
-.btn-outline:hover {
-  background: linear-gradient(var(--teal-primary), var(--dark-teal));
-  color: var(--cream-white);
-}
-
-.btn-primary,
-.btn-outline {
-  position: relative;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
-}
-
-/* Primary Button */
-.btn-primary {
-  background: linear-gradient(var(--orange-primary), var(--orange-secondary));
-  color: var(--cream-white);
-  box-shadow: 0px 4px 10px var(--teal-primary);
-}
-
-/* Outline Button */
-.btn-outline {
-  color: var(--cream-white);
-  background: linear-gradient(var(--teal-primary), var(--dark-teal));
-}
-
-/* Glossy Reflection */
-.btn-primary::before,
-.btn-outline::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(93, 92, 92, 0.171) 10%,
-    transparent 60%
-  );
-  transition: all 0.3s ease;
-  opacity: 0;
-}
-/* Hover Effect */
-.btn-primary:hover,
-.btn-outline:hover {
-  transform: scale(1.05);
-}
-
-.btn-primary:hover::before,
-.btn-outline:hover::before {
-  opacity: 1;
-  transform: rotate(30deg) translate(30px, 30px);
-}
-
-/* Moving Glow Effect */
-@keyframes glowing {
-  0% {
-    box-shadow: 0px 4px 15px #549ad08b;
-  }
-  50% {
-    box-shadow: 0px 4px 20px #549ad0c2;
-  }
-  100% {
-    box-shadow: 0px 4px 15px #549ad08b;
-  }
-}
-
-.btn-primary,
-.btn-outline {
-  animation: glowing 2s infinite alternate;
-}
-
-@keyframes floatingGlow {
-  0% {
-    transform: translateY(0px);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-10px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 0.6;
-  }
-}
-
-/* Heading Styles */
-.page-title h2 {
-  text-align: center;
+.title {
   color: white;
-  font-size: 2.5rem;
-  margin-top: 120px; /* Adjusted to account for the fixed navbar */
-  margin-bottom: 20px;
-  width: 100%; /* Ensure it spans the full width */
+  font-size: 1.5rem;
+  font-weight: 600;
 }
+
+.mid-section {
+  display: flex;
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mid-section a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.mid-section a:hover {
+  color: var(--primary-purple);
+}
+
+.right-section a {
+  display: inline-block;
+  position: relative;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  font-weight: 500;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  background: radial-gradient(circle at top center, var(--muted-purple), var(--deep-purple) 70%);
+  box-shadow: 0 4px 15px rgba(102, 51, 153, 0.3);
+  transition: all 0.4s ease;
+}
+
+.right-section a:hover {
+  transform: translateY(-3px);
+}
+
+.right-section a:hover::before {
+  opacity: 1;
+}
+
+.right-section a:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(102, 51, 153, 0.5);
+}
+
 
 .page-title h2 {
   margin-bottom: 10px;
   position: relative;
-  font-size: 39px; /* Adjust size as needed */
-  color: var(--cream-white);
+  color: var(--off-white);
   text-align: center;
+  font-size: 2.5rem;
+  margin-top: 100px;
+  width: 100%;
 }
 
-/* Small underline */
 .page-title h2::after {
   content: "";
   position: absolute;
-  bottom: -10px; /* Distance from the text */
-  left: 50%; /* Center the underline */
-  transform: translateX(-50%); /* Ensure perfect centering */
-  width: 80px; /* Underline width */
-  height: 4px; /* Underline thickness */
-  background: var(--navy-blue); /* Underline color */
-  border-radius: 2px; /* Optional: Rounded edges */
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--off-white);
+  border-radius: 2px;
 }
 
-/* Container for cards */
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-  gap: 20px; /* Space between the cards */
-  justify-items: center; /* Center the cards horizontally */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
   padding: 20px;
-  margin-top: 20px; /* Add some space below the heading */
+  margin-top: 20px;
 }
 
-/* Flip card styles */
 .flip-card {
   background-color: transparent;
-  width: 350px; /* Extended width */
-  height: 450px; /* Extended height */
-  border-radius: 15px; /* Rounded corners for the glass effect */
-  perspective: 1000px; /* Add 3D effect */
-  overflow: hidden; /* Hide anything overflowing the card */
+  width: 350px;
+  height: 450px;
+  border-radius: 15px;
+  perspective: 1000px;
+  overflow: hidden;
 }
 
 .flip-card-inner {
@@ -241,28 +161,25 @@ body {
   transform-style: preserve-3d;
 }
 
-/* Apply the flip effect */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Front and back of the card */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Front side styling */
 .flip-card-front {
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Blur effect */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -272,14 +189,13 @@ body {
 .flip-card-front h3 {
   font-size: 1.1rem;
   margin: 15px 0;
-  color: var(--cream-white);
+  color: var(--off-white);
 }
 
-/* Back side styling */
 .flip-card-back {
-  background: #0d2a5871; /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Dark background for the back */
-  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: var(--off-white);
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
@@ -298,7 +214,6 @@ body {
   text-align: center;
 }
 
-/* Action buttons styles */
 .action-buttons {
   display: flex;
   justify-content: space-around;
@@ -332,44 +247,35 @@ body {
   font-size: 1.2rem;
 }
 
-/* Notification Styles */
-/* Notification Styles - Center Bottom */
 .notification {
   position: fixed;
-  bottom: 30px; /* Distance from the bottom */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%) translateY(20px); /* Centering & initial animation offset */
-  background: #4caf50; /* Green for added */
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #4caf50;
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.5s, transform 0.5s; /* Smooth animation */
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
   font-size: 16px;
-  z-index: 1000; /* Ensure it appears above everything */
+  z-index: 1000;
 }
 
-/* Show Notification */
 .notification.show {
   opacity: 1;
-  transform: translateX(-50%) translateY(0); /* Animate up to center bottom */
+  transform: translateX(-50%) translateY(0);
 }
 
-/* Red for Removed Items */
 .notification.removed {
-  background: #f44336; /* Red for removed */
+  background: #f44336;
 }
 
 .notification.wishlist {
-  background: #28a745; /* Reddish for wishlist */
+  background: #28a745;
 }
 
-.notification.removed {
-  background: #f44336; /* Red for removal */
-}
-
-/* Action Buttons */
 .action-buttons {
   display: flex;
   justify-content: space-around;
@@ -382,34 +288,35 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 28px; /* Icon size */
-  color: white; /* Default icon color */
-}
-.favorite-btn i,
-.cart-btn i {
-  font-size: 1.5rem; /* Increase icon size */
+  font-size: 28px;
+  color: white;
 }
 
-/* Filled State */
+.favorite-btn i,
+.cart-btn i {
+  font-size: 1.5rem;
+}
+
 .favorite-btn.added {
-  color: red; /* Filled heart */
+  color: red;
 }
 
 .cart-btn.added {
-  color: #28a745; /* Green when added */
+  color: #28a745;
 }
 
-/* Hover Effects */
 .favorite-btn:hover {
-  color: red; /* Light hover effect */
+  color: red;
   background: transparent;
 }
+
 .cart-btn:hover {
   color: #28a745;
   background: transparent;
 }
+
 .flip-card-back .price {
-    font-size: 1.1rem; /* Make it larger */
-    font-weight: bold; /* Make it bold */
-    margin-top: 30px;
-  }
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 30px;
+}

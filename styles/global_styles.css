@@ -1,37 +1,26 @@
 :root {
-  /* Teal Colors */
-  --teal-light: #CBF3F0;
-  --teal-primary: #2EC4B6;
-  --dark-teal:#00578e;
-
-  /* White */
-  --white: #FFFFFF;
-
-  /* Orange/Yellow Accents */
-  --orange-light: #FFBF69;
-  --orange-primary: #FF9F1C;
-  --orange-secondary: #FFB941;
 
 
-   /* First Palette */
-   --light-lavender: #eaeaf9;
-   --muted-purple: #7f77c9;
-   --deep-purple: #5943a6;
-   --sky-blue: #6db2e6;
-   --navy-blue: #0d2a58;
-   --coral-pink: #ff6f61;
- 
-   /* Second Palette */
-   --cream-white: #fff9f4;
-   --cool-blue: #549bd0;
-   --steel-blue: #29679a;
-   --midnight-blue: #022c58;
+  /* First Palette */
+  --light-lavender: #eaeaf9;
+  --muted-purple: #6a63aa;
+  --primary-purple: #4f3cbb;
+  --deep-purple: #473587;
+  --sky-blue: #6db2e6;
+  --navy-blue: #0d2a58;
 
+  /* Second Palette */
+  --off-white:#f8f8f8;
+  --cool-blue: #549bd0;
+  --steel-blue: #29679a;
+  --midnight-blue: #02162d;
 
-   /*Gradients and animation*/
-   --orange-gradient: linear-gradient(135deg, #FFBF69, #FF9F1C);
-   --login-btn:linear-gradient(135deg, #2EC4B6, #00578e);
-   --btn-hover:conic-gradient(from 0deg, #00578e, #FF9F1C, #2EC4B6, #00578e);
-   
+/**************************************************************************************/
+  
+  --cards: 3;
+  --cardHeight: 120vh; 
+  --cardTopPadding: 1.5em;
+  --cardMargin: 4vw;
+  --cardWidth: 80%;
+
 }
-
