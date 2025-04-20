@@ -9,29 +9,12 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: linear-gradient(135deg, var(--midnight-blue), #5943a6);
+  color: var(--off-white);
   min-height: 100vh;
-  background-image: url("/media/index_media/backgrounds/shopBG.png");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  background-color: var(--midnight-blue);
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(50px);
-  z-index: -1;
-}
-
+/*  Navigation bar */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -41,6 +24,8 @@ body::before {
   top: 0;
   background-color: #02162d97;
   backdrop-filter: blur(10px);
+  position: sticky;
+  z-index: 100;
 }
 
 .left-section {
@@ -93,7 +78,11 @@ body::before {
   border: none;
   cursor: pointer;
   letter-spacing: 0.1rem;
-  background: radial-gradient(circle at top center, var(--muted-purple), var(--deep-purple) 70%);
+  background: radial-gradient(
+    circle at top center,
+    var(--muted-purple),
+    var(--deep-purple) 70%
+  );
   box-shadow: 0 4px 15px rgba(102, 51, 153, 0.3);
   transition: all 0.4s ease;
 }
@@ -102,23 +91,19 @@ body::before {
   transform: translateY(-3px);
 }
 
-.right-section a:hover::before {
-  opacity: 1;
-}
-
 .right-section a:active {
   transform: translateY(1px);
   box-shadow: 0 2px 10px rgba(102, 51, 153, 0.5);
 }
 
-
+/* Shared Page Title */
 .page-title h2 {
   margin-bottom: 10px;
   position: relative;
   color: var(--off-white);
   text-align: center;
   font-size: 2.5rem;
-  margin-top: 100px;
+  margin-top: 70px;
   width: 100%;
 }
 
@@ -134,29 +119,67 @@ body::before {
   border-radius: 2px;
 }
 
+/* Container Styles */
 .container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  justify-items: center;
-  padding: 20px;
-  margin-top: 20px;
+  max-width: 1400px;
+  width: 95%;
+  margin: 30px auto;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(2, 22, 45, 0.25);
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  border: 1px solid rgba(109, 178, 230, 0.2);
+  box-shadow: 0 0 15px rgba(109, 178, 230, 0.3), 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      135deg,
+      rgba(109, 178, 230, 0.05) 0%,
+      rgba(109, 178, 230, 0) 50%,
+      rgba(109, 178, 230, 0.05) 100%
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(109, 178, 230, 0.03) 0px,
+      rgba(109, 178, 230, 0.03) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+  z-index: -1;
+}
+
+/* Product Grid */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 30px;
+}
+
+/* Product Card */
 .flip-card {
   background-color: transparent;
-  width: 350px;
+  width: 100%;
   height: 450px;
-  border-radius: 15px;
+  border-radius: 16px;
   perspective: 1000px;
   overflow: hidden;
+  border: 1px solid rgba(109, 178, 230, 0.2);
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
@@ -172,48 +195,59 @@ body::before {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 25px;
 }
 
 .flip-card-front {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  background: rgba(2, 22, 45, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 15px;
+}
+
+.flip-card-front img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
 }
 
 .flip-card-front h3 {
-  font-size: 1.1rem;
-  margin: 15px 0;
+  font-size: 1.2rem;
   color: var(--off-white);
+  text-align: center;
 }
 
 .flip-card-back {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  color: var(--off-white);
+  background: rgba(2, 22, 45, 0.4);
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .flip-card-back h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--off-white);
 }
 
 .flip-card-back p {
   font-size: 1rem;
-  margin: 5px 0;
-  text-align: center;
+  color: var(--light-lavender);
+  margin: 8px 0;
 }
 
+.price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #6db2e6;
+  margin: 15px 0;
+}
+
+/* Action Buttons */
 .action-buttons {
   display: flex;
   justify-content: space-around;
@@ -223,12 +257,11 @@ body::before {
 
 .favorite-btn,
 .cart-btn {
-  background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
   font-size: 1.2rem;
   padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s;
   display: flex;
@@ -236,60 +269,29 @@ body::before {
   gap: 10px;
 }
 
+.favorite-btn {
+  background-color: #e72d2d39;
+  color: #f45050;
+}
+
+.cart-btn {
+  background: rgba(109, 178, 230, 0.15);
+  color: #6db2e6;
+  border: 1px solid rgba(109, 178, 230, 0.2);
+}
+
 .favorite-btn:hover,
 .cart-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.favorite-btn i,
-.cart-btn i {
-  font-size: 1.2rem;
+.favorite-btn:hover {
+  background: rgba(255, 0, 0, 0.25);
 }
 
-.notification {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
-  background: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transition: opacity 0.5s, transform 0.5s;
-  font-size: 16px;
-  z-index: 1000;
-}
-
-.notification.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-.notification.removed {
-  background: #f44336;
-}
-
-.notification.wishlist {
-  background: #28a745;
-}
-
-.action-buttons {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: 80px;
-}
-
-.favorite-btn,
-.cart-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 28px;
-  color: white;
+.cart-btn:hover {
+  background: rgba(109, 178, 230, 0.25);
 }
 
 .favorite-btn i,
@@ -297,26 +299,77 @@ body::before {
   font-size: 1.5rem;
 }
 
+.favorite-btn.liked,
 .favorite-btn.added {
-  color: red;
+  background: rgba(255, 0, 0, 0.3);
+  color: #ff5252;
 }
 
 .cart-btn.added {
-  color: #28a745;
+  background: rgba(109, 178, 230, 0.3);
+  color: #5ca0d8;
 }
 
-.favorite-btn:hover {
-  color: red;
-  background: transparent;
+/* Notifications */
+.notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-size: 16px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.notification.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
-.cart-btn:hover {
-  color: #28a745;
-  background: transparent;
+.notification i {
+  font-size: 1.2rem;
 }
 
-.flip-card-back .price {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-top: 30px;
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mid-section {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .wishlist-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wishlist-item::before {
+    width: 100%;
+    height: 3px;
+  }
+
+  .wishlist-item-buttons {
+    justify-content: center;
+  }
 }

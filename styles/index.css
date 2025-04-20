@@ -450,7 +450,7 @@ body {
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 2px;
-  color: var(--text-light);
+  color: var(--light-lavender);
   text-transform: uppercase;
   display: block;
   margin-bottom: 10px;
@@ -465,7 +465,7 @@ body {
 
 .hero-4-subtitle {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: var(--light-lavender);
   line-height: 1.6;
 }
 
@@ -615,7 +615,7 @@ body {
 }
 
 .footer-social a {
-  color: var(--text-light);
+  color: #0a0a0a;
   font-size: 1.6rem;
   transition: color 0.3s ease;
 }
