@@ -397,6 +397,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.toggle-password:hover {
+  color: var(--off-white);
+}
 .info input,
 .info textarea {
   background: transparent;
@@ -549,23 +552,6 @@ button[type="submit"]:hover {
   padding-right: 40px;
 }
 
-.toggle-password {
-  position: absolute;
-  right: 10px;
-  background: transparent;
-  border: none;
-  color: var(--navy-blue);
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.toggle-password:hover {
-  color: var(--navy-blue);
-}
-
 /* File Input Styling */
 .form-group input[type="file"] {
   width: 100%;
@@ -704,22 +690,6 @@ input:-webkit-autofill:focus {
   border: 1px dashed var(--sky-blue) !important;
   padding: 15px !important;
   background: rgba(2, 22, 45, 0.2) !important;
-}
-.toggle-password {
-  position: absolute;
-  right: 10px;
-  background: transparent;
-  border: none;
-  color: var(--off-white);
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.toggle-password:hover {
-  color: var(--off-white);
 }
 
 .password-strength {

@@ -108,11 +108,9 @@ body {
 /* Profile Card */
 .profile-card {
   background: rgba(2, 22, 45, 0.25);
-  /* --midnight-blue with opacity */
   backdrop-filter: blur(16px);
   border-radius: 16px;
   border: 1px solid rgba(109, 178, 230, 0.2);
-  /* --sky-blue border */
   box-shadow: 0 0 15px rgba(109, 178, 230, 0.3), 0 10px 30px rgba(0, 0, 0, 0.5);
   padding: 30px;
   position: relative;
@@ -214,7 +212,7 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: conic-gradient(var(--sky-blue) 80%, rgba(109, 178, 230, 0.2) 20%);
+  background: conic-gradient(var(--sky-blue) 100%, rgba(109, 178, 230, 0.2) 20%);
   box-shadow: 0 0 10px rgba(109, 178, 230, 0.5);
   display: flex;
   align-items: center;
@@ -320,7 +318,6 @@ body {
   margin-bottom: 5px;
   font-size: 14px;
   color: var(--light-lavender);
-  /* Updated to match admin profile */
 }
 
 .password-input-wrapper {
@@ -349,17 +346,15 @@ input::-webkit-credentials-auto-fill-button {
   right: 10px;
   background: transparent;
   border: none;
-  color: var(--navy-blue);
+  color: var(--sky-blue);
   cursor: pointer;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .toggle-password:hover {
   color: var(--off-white);
-  /* Updated to match admin profile */
 }
 
 .password-strength {
