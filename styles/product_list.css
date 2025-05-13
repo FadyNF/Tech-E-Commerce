@@ -40,11 +40,14 @@ body {
 }
 
 .title {
-  color: white;
+  color: var(--off-white);
   font-size: 1.5rem;
   font-weight: 600;
+  background: linear-gradient(to right, var(--sky-blue), var(--light-lavender));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-
 .mid-section {
   display: flex;
   gap: 2rem;
