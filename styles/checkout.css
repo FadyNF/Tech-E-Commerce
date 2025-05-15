@@ -375,8 +375,8 @@ select#country option:checked {
 }
 
 .cart-item-img {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 90px;
   border-radius: 10px;
   overflow: hidden;
 }
