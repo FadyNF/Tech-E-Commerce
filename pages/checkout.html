@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="/media/index_media/TechHive-logo.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="/styles/checkout.css" />
+    <script src="/scripts/checkout.js" defer></script>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="left-section">
+        <img
+          src="/media/index_media/TechHive-logo.png"
+          alt="TechHive Logo"
+          class="logo"
+        />
+        <h1 class="title">TechHive</h1>
+      </div>
+      <div class="mid-section">
+        <a href="/pages/index.html">Home</a>
+        <a href="/pages/about.html">About</a>
+        <a href="/pages/product_list.html">Shop</a>
+        <a href="#">Cart</a>
+        <a href="#">Comparison</a>
+      </div>
+      <div class="right-section">
+        <a href="/pages/login_signup.html">Login</a>
+      </div>
+    </div>
+    <div class="container">
+      <form class="checkout-form glass-card">
+        <div class="form-header">
+          <h2>Checkout</h2>
+          <div class="step-indicator">
+            <div class="step active">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+          </div>
+        </div>
+
+        <!-- Step 1: Shipping Information -->
+        <div class="form-step active" data-step="1">
+          <h3>Shipping Information</h3>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="your@email.com"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                class="form-control"
+                placeholder="John"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                class="form-control"
+                placeholder="Doe"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              class="form-control"
+              placeholder="123 Main St"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input
+                type="text"
+                id="city"
+                class="form-control"
+                placeholder="New York"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="zip">ZIP Code</label>
+              <input
+                type="text"
+                id="zip"
+                class="form-control"
+                placeholder="10001"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" class="form-control" required>
+              <option value="">Select Country</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="UK">United Kingdom</option>
+              <option value="AU">Australia</option>
+            </select>
+          </div>
+
+          <div class="form-navigation">
+            <button type="button" class="btn btn-outline" disabled>Back</button>
+            <button type="button" class="btn btn-primary next-step">
+              Continue
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Payment Method -->
+        <div class="form-step" data-step="2">
+          <h3>Payment Method</h3>
+          <div class="payment-methods">
+            <div class="payment-method active">
+              <i class="fab fa-cc-visa"></i>
+              <span>Credit Card</span>
+            </div>
+            <div class="payment-method">
+              <i class="fab fa-paypal"></i>
+              <span>PayPal</span>
+            </div>
+            <div class="payment-method">
+              <i class="fas fa-wallet"></i>
+              <span>Wallet</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input
+              type="text"
+              id="cardNumber"
+              class="form-control"
+              placeholder="1234 5678 9012 3456"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="expiry">Expiry Date</label>
+              <input
+                type="text"
+                id="expiry"
+                class="form-control"
+                placeholder="MM/YY"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input
+                type="text"
+                id="cvv"
+                class="form-control"
+                placeholder="123"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cardName">Name on Card</label>
+            <input
+              type="text"
+              id="cardName"
+              class="form-control"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+
+          <div class="form-navigation">
+            <button type="button" class="btn btn-outline prev-step">
+              Back
+            </button>
+            <button type="button" class="btn btn-primary next-step">
+              Continue
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Order Summary -->
+        <div class="form-step" data-step="3">
+          <h3>Order Summary</h3>
+          <div class="form-group">
+            <label for="notes">Special Instructions (Optional)</label>
+            <textarea
+              id="notes"
+              class="form-control"
+              rows="3"
+              placeholder="Any special instructions..."
+            ></textarea>
+          </div>
+
+          <div class="form-navigation">
+            <button type="button" class="btn btn-outline prev-step">
+              Back
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Complete Purchase
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="order-summary glass-card">
+        <h3>Your Order</h3>
+
+        <div class="cart-items">
+          <div class="cart-item">
+            <div class="cart-item-img">
+              <img src="/media/index_media/product_list/Anker_Wireless_Charging_Pad__15W_-removebg-preview.png" alt="Product" />
+            </div>
+            <div class="cart-item-details">
+              <div class="cart-item-name">Anker Wireless Charging Pad</div>
+              <div class="cart-item-price">999 EGP</div>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item-img">
+              <img src="/media/index_media/product_list/JBL_speaker-removebg-preview.png" alt="Product" />
+            </div>
+            <div class="cart-item-details">
+              <div class="cart-item-name">JBL Speaker</div>
+              <div class="cart-item-price">1,999 EGP</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>2,998 EGP</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span>FREE</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax</span>
+          <span>299.8 EGP</span>
+        </div>
+
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <span>3,297.8 EGP</span>
+        </div>
+
+        <div class="form-group" style="margin-top: 2rem">
+          <label for="promo">Promo Code</label>
+          <div style="display: flex; gap: 0.5rem">
+            <input
+              type="text"
+              id="promo"
+              class="form-control"
+              placeholder="Enter promo code"
+            />
+            <button
+              type="button"
+              class="btn btn-outline"
+              style="padding: 0 1rem"
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+
+        <div
+          style="
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+          "
+        >
+          <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7)">
+            <i class="fas fa-lock" style="margin-right: 0.5rem"></i>
+            Your transaction is secure and encrypted
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

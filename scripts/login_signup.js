@@ -11,8 +11,8 @@ loginLink.onclick = () => {
 };
 
 const users = {
-  "admin@example.com": "123",
-  "user@example.com": "123",
+  "admin@gmail.com": "123",
+  "user@gmail.com": "123",
 };
 
 function showError(element, message) {
@@ -31,25 +31,32 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const errorText = document.getElementById("loginError");
 
   if (users[email] && users[email] === password) {
-
-    window.location.href = "/pages/index.html";
+    if (email === "admin@gmail.com") {
+      window.location.href = "/pages/admin_profile.html";
+    } else if (email === "user@gmail.com") {
+      window.location.href = "/pages/user_profile.html";
+    } else {
+      window.location.href = "/pages/index.html";
+    }
   } else {
     showError(errorText, "Invalid credentials");
   }
 });
 
-document.getElementById("registerForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const email = document.getElementById("registerEmail").value.trim();
-  const password = document.getElementById("registerPassword").value.trim();
-  const errorText = document.getElementById("registerError");
+document
+  .getElementById("registerForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = document.getElementById("registerEmail").value.trim();
+    const password = document.getElementById("registerPassword").value.trim();
+    const errorText = document.getElementById("registerError");
 
-  if (!validateEmail(email)) {
-    showError(errorText, "Invalid email format");
-  } else {
-    window.location.href = "/pages/index.html";
-  }
-});
+    if (!validateEmail(email)) {
+      showError(errorText, "Invalid email format");
+    } else {
+      window.location.href = "/pages/index.html";
+    }
+  });
 
 function validateEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
