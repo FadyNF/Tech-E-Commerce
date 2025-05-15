@@ -62,3 +62,19 @@ function validateEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
+
+
+registerLink.onclick = () => {
+  wrapper.classList.add("active");
+  document.querySelector(".form-box.login").classList.remove("active-panel");
+  document.querySelector(".form-box.register").classList.add("active-panel");
+};
+
+loginLink.onclick = () => {
+  wrapper.classList.remove("active");
+  document.querySelector(".form-box.register").classList.remove("active-panel");
+  document.querySelector(".form-box.login").classList.add("active-panel");
+};
+
+// Set default active panel
+document.querySelector(".form-box.login").classList.add("active-panel");
