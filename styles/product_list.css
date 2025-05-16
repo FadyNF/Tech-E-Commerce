@@ -540,7 +540,7 @@ body {
         order: 2; /* Ensure it comes after mid-section */
         position: relative; /* Remove any absolute positioning */
         z-index: auto; /* Default z-index */
-        top: 50lvh;
+        top: 60lvh;
     }
     
     .nav-links.active .right-section a {

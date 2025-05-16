@@ -385,32 +385,61 @@ if (deleteAccountButton) {
 
 // Menu toggle functionality and modals
 document.addEventListener("DOMContentLoaded", function () {
-    // Menu Toggle
-    const menuToggle = document.querySelector(".menu-toggle");
+    
+    // // Menu Toggle
+    // const menuToggle = document.querySelector(".menu-toggle");
+    // const navLinks = document.querySelector(".nav-links");
+
+    // if (menuToggle && navLinks) {
+    //     menuToggle.addEventListener("click", function (event) {
+    //         navLinks.classList.toggle("active");
+    //         event.stopPropagation();
+    //     });
+
+    //     // Close menu when clicking outside
+    //     document.addEventListener("click", function (event) {
+    //         if (
+    //             navLinks.classList.contains("active") &&
+    //             !navLinks.contains(event.target) &&
+    //             !menuToggle.contains(event.target)
+    //         ) {
+    //             navLinks.classList.remove("active");
+    //         }
+    //     });
+
+    //     // Prevent menu from closing when clicking inside
+    //     navLinks.addEventListener("click", function (event) {
+    //         event.stopPropagation();
+    //     });
+    // }
+
+    const burgerMenu = document.querySelector(".burger-menu");
     const navLinks = document.querySelector(".nav-links");
-
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", function (event) {
-            navLinks.classList.toggle("active");
-            event.stopPropagation();
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener("click", function (event) {
-            if (
-                navLinks.classList.contains("active") &&
-                !navLinks.contains(event.target) &&
-                !menuToggle.contains(event.target)
-            ) {
+    
+    burgerMenu.addEventListener("click", function() {
+        // Toggle active class on both burger and nav links
+        burgerMenu.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        
+        // Prevent scrolling when menu is open
+        if (navLinks.classList.contains("active")) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+    });
+    
+    // Close menu when clicking on links (for mobile)
+    const navLinksItems = document.querySelectorAll(".nav-links a");
+    navLinksItems.forEach(link => {
+        link.addEventListener("click", function() {
+            if (window.innerWidth <= 1024) {
+                burgerMenu.classList.remove("active");
                 navLinks.classList.remove("active");
+                document.body.style.overflow = "";
             }
         });
-
-        // Prevent menu from closing when clicking inside
-        navLinks.addEventListener("click", function (event) {
-            event.stopPropagation();
-        });
-    }
+    });
 
     // Modal Handling
     const userModal = document.getElementById("userModal");
