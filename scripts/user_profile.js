@@ -145,28 +145,31 @@ deleteAccountButton.addEventListener("click", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
+    const burgerMenu = document.querySelector(".burger-menu");
     const navLinks = document.querySelector(".nav-links");
 
-    // Menu toggle functionality
-    menuToggle.addEventListener("click", function (event) {
+    burgerMenu.addEventListener("click", function () {
+        // Toggle active class on both burger and nav links
+        burgerMenu.classList.toggle("active");
         navLinks.classList.toggle("active");
-        event.stopPropagation(); // Prevents immediate closing when clicking the menu button
-    });
 
-    // Close menu when clicking outside
-    document.addEventListener("click", function (event) {
-        if (
-            navLinks.classList.contains("active") &&
-            !navLinks.contains(event.target) &&
-            !menuToggle.contains(event.target)
-        ) {
-            navLinks.classList.remove("active");
+        // Prevent scrolling when menu is open
+        if (navLinks.classList.contains("active")) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
         }
     });
 
-    // Prevent menu from closing when clicking inside the menu itself
-    navLinks.addEventListener("click", function (event) {
-        event.stopPropagation();
+    // Close menu when clicking on links (for mobile)
+    const navLinksItems = document.querySelectorAll(".nav-links a");
+    navLinksItems.forEach((link) => {
+        link.addEventListener("click", function () {
+            if (window.innerWidth <= 1024) {
+                burgerMenu.classList.remove("active");
+                navLinks.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+        });
     });
 });

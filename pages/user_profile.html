@@ -1,242 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      href="/media/index_media/TechHive-logo.png"
-      type="image/png"
-    />
-    <link rel="stylesheet" href="/styles/user_profile.css" />
-
-    <script src="/scripts/user_profile.js" defer></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link href="/styles/global_styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="nav">
-      <div class="left-section">
-        <img
-          src="/media/index_media/TechHive-logo.png"
-          alt="TechHive Logo"
-          class="logo"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile</title>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            rel="stylesheet"
         />
-        <h1 class="title">TechHive</h1>
-      </div>
-      <div class="mid-section">
-        <a href="/pages/index.html">Home</a>
-        <a href="/pages/about.html">About</a>
-        <a href="/pages/product_list.html">Shop</a>
-        <a href="/pages/cart.html">Cart</a>
-        <a href="/pages/comparison.html">Comparison</a>
-        <a href="/pages/user_profile.html">Profile</a>
-      </div>
-      <div class="right-section">
-        <a href="/pages/login_signup.html">Logout</a>
-      </div>
-    </div>
+        <link
+            rel="icon"
+            href="/media/index_media/TechHive-logo.png"
+            type="image/png"
+        />
+        <link rel="stylesheet" href="/styles/user_profile.css" />
 
-    <main class="profile-container">
-      <section class="profile-card">
-        <div class="profile-header">
-          <div class="avatar">
-            <!-- Avatar shows initials "RR" by default -->
-          </div>
-          <div class="completion-status">
-            <p>Profile Completion</p>
-            <div class="progress-circle">
-              <span>100%</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="profile-details">
-          <div class="info">
-            <h3>Personal Info</h3>
-            <p><strong>Full Name:</strong>User</p>
-            <p><strong>Email:</strong> User@example.com</p>
-            <p><strong>Phone:</strong> (219) 555-0114</p>
-            <button class="btn-edit">Edit</button>
-            <button class="btn-save" style="display: none">Save</button>
-          </div>
-
-          <div class="info">
-            <h3>Billing Information</h3>
-            <p><strong>Card Number:</strong> **** **** **** 1234</p>
-            <p><strong>Expiry Date:</strong> 12/25</p>
-            <p>
-              <strong>Billing Address:</strong> 123 Main St, San Francisco, CA
-            </p>
-            <button class="btn-edit">Edit</button>
-            <button class="btn-save" style="display: none">Save</button>
-          </div>
-
-          <!-- Password Section -->
-          <div class="info password-section">
-            <h3>Password & Security</h3>
-            <div class="password-field">
-              <label for="current-password">Current Password</label>
-              <div class="password-input-wrapper">
-                <input
-                  type="password"
-                  id="current-password"
-                  value="••••••••••"
+        <script src="/scripts/user_profile.js" defer></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link href="/styles/global_styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="nav">
+            <div class="left-section">
+                <img
+                    src="/media/index_media/TechHive-logo.png"
+                    alt="TechHive Logo"
+                    class="logo"
                 />
-                <button class="toggle-password" aria-label="Show password">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
-                    ></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                </button>
-              </div>
+                <h1 class="title" onclick="window.location.href='index.html'">
+                    TechHive
+                </h1>
             </div>
 
-            <div class="password-field">
-              <label for="new-password">New Password</label>
-              <div class="password-input-wrapper">
-                <input type="password" id="new-password" />
-                <button class="toggle-password" aria-label="Show password">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
-                    ></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                </button>
-              </div>
+            <!-- Burger menu -->
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
-            <div class="password-field">
-              <label for="confirm-password">Confirm New Password</label>
-              <div class="password-input-wrapper">
-                <input type="password" id="confirm-password" />
-                <button class="toggle-password" aria-label="Show password">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
-                    ></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                </button>
-              </div>
+            <div class="nav-links">
+                <div class="mid-section">
+                    <a href="/pages/index.html">Home</a>
+                    <a href="/pages/about.html">About</a>
+                    <a href="/pages/product_list.html">Shop</a>
+                    <a href="/pages/cart.html">Cart</a>
+                    <a href="/pages/wishlist.html">Wishlist</a>
+                    <a href="/pages/comparison.html">Comparison</a>
+                    <a href="/pages/user_profile.html">Profile</a>
+                </div>
+                <div class="right-section">
+                    <a href="/pages/login_signup.html">Logout</a>
+                </div>
             </div>
-
-            <div class="password-strength">
-              <p>Password Strength:</p>
-              <div class="strength-meter">
-                <div
-                  class="strength-bar"
-                  style="
-                    width: 70%;
-                    background: linear-gradient(
-                      135deg,
-                      var(--deep-purple),
-                      var(--sky-blue)
-                    );
-                  "
-                ></div>
-              </div>
-              <span>Strong</span>
-            </div>
-
-            <button class="btn-save">Update Password</button>
-          </div>
-
-          <!-- Delete Account Section -->
-          <div class="delete-account-section">
-            <h3>Delete Account</h3>
-            <p class="warning-text">
-              Warning: This action cannot be undone. All your data will be
-              permanently removed.
-            </p>
-
-            <div class="confirmation-checkbox">
-              <input type="checkbox" id="delete-confirm" />
-              <label for="delete-confirm" style="color: white; font-weight: 600"
-                >I understand that this action is permanent</label
-              >
-            </div>
-
-            <div class="password-field">
-              <label for="delete-password"
-                >Enter your password to confirm</label
-              >
-              <div class="password-input-wrapper">
-                <input type="password" id="delete-password" />
-                <button class="toggle-password" aria-label="Show password">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
-                    ></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <button class="btn-delete-account" disabled>Delete Account</button>
-          </div>
         </div>
-      </section>
-    </main>
-  </body>
+
+        <main class="profile-container">
+            <section class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar">
+                        <!-- Avatar shows initials "RR" by default -->
+                    </div>
+                    <div class="completion-status">
+                        <p>Profile Completion</p>
+                        <div class="progress-circle">
+                            <span>100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-details">
+                    <div class="info">
+                        <h3>Personal Info</h3>
+                        <p><strong>Full Name:</strong>User</p>
+                        <p><strong>Email:</strong> User@example.com</p>
+                        <p><strong>Phone:</strong> (219) 555-0114</p>
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-save" style="display: none">
+                            Save
+                        </button>
+                    </div>
+
+                    <div class="info">
+                        <h3>Billing Information</h3>
+                        <p><strong>Card Number:</strong> **** **** **** 1234</p>
+                        <p><strong>Expiry Date:</strong> 12/25</p>
+                        <p>
+                            <strong>Billing Address:</strong> 123 Main St, San
+                            Francisco, CA
+                        </p>
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-save" style="display: none">
+                            Save
+                        </button>
+                    </div>
+
+                    <!-- Password Section -->
+                    <div class="info password-section">
+                        <h3>Password & Security</h3>
+                        <div class="password-field">
+                            <label for="current-password"
+                                >Current Password</label
+                            >
+                            <div class="password-input-wrapper">
+                                <input
+                                    type="password"
+                                    id="current-password"
+                                    value="••••••••••"
+                                />
+                                <button
+                                    class="toggle-password"
+                                    aria-label="Show password"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path
+                                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                                        ></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="password-field">
+                            <label for="new-password">New Password</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="new-password" />
+                                <button
+                                    class="toggle-password"
+                                    aria-label="Show password"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path
+                                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                                        ></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="password-field">
+                            <label for="confirm-password"
+                                >Confirm New Password</label
+                            >
+                            <div class="password-input-wrapper">
+                                <input type="password" id="confirm-password" />
+                                <button
+                                    class="toggle-password"
+                                    aria-label="Show password"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path
+                                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                                        ></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="password-strength">
+                            <p>Password Strength:</p>
+                            <div class="strength-meter">
+                                <div
+                                    class="strength-bar"
+                                    style="
+                                        width: 70%;
+                                        background: linear-gradient(
+                                            135deg,
+                                            var(--deep-purple),
+                                            var(--sky-blue)
+                                        );
+                                    "
+                                ></div>
+                            </div>
+                            <span>Strong</span>
+                        </div>
+
+                        <button class="btn-save">Update Password</button>
+                    </div>
+
+                    <!-- Delete Account Section -->
+                    <div class="delete-account-section">
+                        <h3>Delete Account</h3>
+                        <p class="warning-text">
+                            Warning: This action cannot be undone. All your data
+                            will be permanently removed.
+                        </p>
+
+                        <div class="confirmation-checkbox">
+                            <input type="checkbox" id="delete-confirm" />
+                            <label
+                                for="delete-confirm"
+                                style="color: white; font-weight: 600"
+                                >I understand that this action is
+                                permanent</label
+                            >
+                        </div>
+
+                        <div class="password-field">
+                            <label for="delete-password"
+                                >Enter your password to confirm</label
+                            >
+                            <div class="password-input-wrapper">
+                                <input type="password" id="delete-password" />
+                                <button
+                                    class="toggle-password"
+                                    aria-label="Show password"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path
+                                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                                        ></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn-delete-account" disabled>
+                            Delete Account
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
 </html>

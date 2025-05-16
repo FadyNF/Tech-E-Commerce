@@ -1,106 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechHive - Product Comparison</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/styles/comparison.css" />
-    <script src="/scripts/comparison.js" defer></script>
-    <link
-      rel="icon"
-      href="/media/index_media/TechHive-logo.png"
-      type="image/png"
-    />
-  </head>
-  <body>
-    <div class="nav">
-      <div class="left-section">
-        <img
-          src="/media/index_media/TechHive-logo.png"
-          alt="TechHive Logo"
-          class="logo"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TechHive - Product Comparison</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
-        <h1 class="title">TechHive</h1>
-      </div>
-      <div class="mid-section">
-        <a href="/pages/index.html">Home</a>
-        <a href="/pages/about.html">About</a>
-        <a href="/pages/product_list.html">Shop</a>
-        <a href="/pages/cart.html">Cart</a>
-        <a href="/pages/comparison.html">Comparison</a>
-        <a href="/pages/user_profile.html">Profile</a>
-      </div>
-      <div class="right-section">
-        <a href="/pages/login_signup.html">Login</a>
-      </div>
-    </div>
+        <link rel="stylesheet" href="/styles/comparison.css" />
+        <script src="/scripts/comparison.js" defer></script>
+        <link
+            rel="icon"
+            href="/media/index_media/TechHive-logo.png"
+            type="image/png"
+        />
+    </head>
+    <body>
+        <div class="nav">
+            <div class="left-section">
+                <img
+                    src="/media/index_media/TechHive-logo.png"
+                    alt="TechHive Logo"
+                    class="logo"
+                />
+                <h1 class="title" onclick="window.location.href='index.html'">
+                    TechHive
+                </h1>
+            </div>
+            
+            <!-- Burger menu -->
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-    <div class="comparison-container">
-      <div class="tech-circle circle-1"></div>
-      <div class="tech-circle circle-2"></div>
-      <div class="tech-circle circle-3"></div>
-
-      <h1 class="comparison-title">
-        <span class="title-gradient">Product Comparison</span>
-
-      </h1>
-
-      <div class="selection-container">
-        <div class="select-box glow-box">
-          <div class="select-header">
-            <i class="fas fa-mobile-alt"></i>
-            <label for="item1">Choose Item One</label>
-          </div>
-          <select id="item1" class="dropdown">
-            <option value="">Select a product</option>
-            <option value="iphone13">iPhone 13</option>
-            <option value="samsung22">Samsung Galaxy S22</option>
-            <option value="pixel6">Google Pixel 6</option>
-            <option value="oneplus10">OnePlus 10 Pro</option>
-          </select>
+            <div class="nav-links">
+              <div class="mid-section">
+                  <a href="/pages/index.html">Home</a>
+                  <a href="/pages/about.html">About</a>
+                  <a href="/pages/product_list.html">Shop</a>
+                  <a href="/pages/cart.html">Cart</a>
+                  <a href="/pages/wishlist.html">Wishlist</a>
+                  <a href="/pages/comparison.html">Comparison</a>
+                  <a href="/pages/user_profile.html">Profile</a>
+              </div>
+              <div class="right-section">
+                  <a href="/pages/login_signup.html">Login</a>
+              </div>
+            </div>
         </div>
 
-        <div class="vs-circle">VS</div>
+        <div class="comparison-container">
+            <div class="tech-circle circle-1"></div>
+            <div class="tech-circle circle-2"></div>
+            <div class="tech-circle circle-3"></div>
 
-        <div class="select-box glow-box">
-          <div class="select-header">
-            <i class="fas fa-mobile-alt"></i>
-            <label for="item2">Choose Item Two</label>
-          </div>
-          <select id="item2" class="dropdown">
-            <option value="">Select a product</option>
-            <option value="iphone13">iPhone 13</option>
-            <option value="samsung22">Samsung Galaxy S22</option>
-            <option value="pixel6">Google Pixel 6</option>
-            <option value="oneplus10">OnePlus 10 Pro</option>
-          </select>
+            <h1 class="comparison-title">
+                <span class="title-gradient">Product Comparison</span>
+            </h1>
+
+            <div class="selection-container">
+                <div class="select-box glow-box">
+                    <div class="select-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <label for="item1">Choose Item One</label>
+                    </div>
+                    <select id="item1" class="dropdown">
+                        <option value="">Select a product</option>
+                        <option value="iphone13">iPhone 13</option>
+                        <option value="samsung22">Samsung Galaxy S22</option>
+                        <option value="pixel6">Google Pixel 6</option>
+                        <option value="oneplus10">OnePlus 10 Pro</option>
+                    </select>
+                </div>
+
+                <div class="vs-circle">VS</div>
+
+                <div class="select-box glow-box">
+                    <div class="select-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <label for="item2">Choose Item Two</label>
+                    </div>
+                    <select id="item2" class="dropdown">
+                        <option value="">Select a product</option>
+                        <option value="iphone13">iPhone 13</option>
+                        <option value="samsung22">Samsung Galaxy S22</option>
+                        <option value="pixel6">Google Pixel 6</option>
+                        <option value="oneplus10">OnePlus 10 Pro</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="compareBtn" class="compare-button">
+                <span>Compare Now</span>
+                <i class="fas fa-arrow-right"></i>
+                <div class="button-hover-effect"></div>
+            </button>
         </div>
-      </div>
 
-      <button id="compareBtn" class="compare-button">
-        <span>Compare Now</span>
-        <i class="fas fa-arrow-right"></i>
-        <div class="button-hover-effect"></div>
-      </button>
-    </div>
-
-    <div id="resultOverlay" class="result-overlay">
-      <div class="result-content">
-        <span class="close-btn"><i class="fas fa-times"></i></span>
-        <h2>
-          <span class="result-title">Comparison Results</span>
-          <span class="result-title-shadow">Comparison Results</span>
-        </h2>
-        <div class="products-container">
-          <div id="product1" class="product-card neon-card"></div>
-          <div id="product2" class="product-card neon-card"></div>
+        <div id="resultOverlay" class="result-overlay">
+            <div class="result-content">
+                <span class="close-btn"><i class="fas fa-times"></i></span>
+                <h2>
+                    <span class="result-title">Comparison Results</span>
+                    <!-- <span class="result-title-shadow">Comparison Results</span> -->
+                </h2>
+                <div class="products-container">
+                    <div id="product1" class="product-card neon-card"></div>
+                    <div id="product2" class="product-card neon-card"></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-
-  </body>
+    </body>
 </html>
