@@ -103,6 +103,28 @@ body {
     box-shadow: 0 2px 10px rgba(102, 51, 153, 0.5);
 }
 
+/* Burger Menu */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+
+
 /* Shared Page Title */
 .page-title h2 {
     margin-bottom: 10px;
@@ -441,39 +463,277 @@ body {
     font-size: 1.2rem;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
-    .container {
-        grid-template-columns: repeat(3, 1fr);
+/* Base Responsive Layout */
+@media (max-width: 1024px) {
+    .nav {
+        position: relative;
+        justify-content: space-between;
     }
-}
-
-@media (max-width: 900px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .mid-section {
+    
+    /* Hide desktop nav links by default */
+    .nav-links {
         display: none;
     }
+    
+    /* FIX 1: Ensure burger menu is visible and properly positioned */
+    .burger-menu {
+        display: block;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 2000; /* Higher z-index to stay on top */
+        position: relative;
+        background-color: transparent; /* Ensure no background covers it */
+    }
+
+    .burger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease;
+    }
+    
+    /* Mobile menu styles when active */
+    .nav-links.active {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--midnight-blue);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 100px 30px 30px;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        overflow-y: auto; /* Make scrollable if needed */
+    }
+
+    /* Style the mid-section links */
+    .nav-links.active .mid-section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .nav-links.active .mid-section a {
+        font-size: 1.2rem;
+        padding: 0.5rem 0 0 0.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+        display: block;
+        width: 100%;
+
+    }
+
+    /* FIX 2: Style the right-section (login button) to appear BELOW the nav links */
+    .nav-links.active .right-section {
+        width: 100%;
+        margin-top: 1rem; /* Add space between nav links and login button */
+        order: 2; /* Ensure it comes after mid-section */
+        position: relative; /* Remove any absolute positioning */
+        z-index: auto; /* Default z-index */
+        top: 50lvh;
+    }
+    
+    .nav-links.active .right-section a {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        padding: 0.75rem 1rem;
+        display: block;
+    }
+
+    /* Burger animation */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: white; /* Ensure visibility */
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+        background-color: white; /* Ensure visibility */
+    }
+
+    /* Hide original mid and right sections when in mobile view */
+    /* They will only be visible inside .nav-links when it's active */
+    .nav > .mid-section,
+    .nav > .right-section {
+        display: none;
+    }
+    
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px;
+    }
+    
+    .page-title h2 {
+        font-size: 2.2rem;
+    }
 }
 
-@media (max-width: 600px) {
-    .container {
-        grid-template-columns: 1fr;
+
+@media (max-width: 767px) {
+    /* Mobile navigation */
+    .nav {
+        padding: 1rem 5%;
     }
 
-    .wishlist-item {
-        flex-direction: column;
-        text-align: center;
+    /* Ensure burger menu remains visible with proper contrast */
+    .burger-menu {
+        z-index: 2000;
+    }
+    
+    .burger-menu span {
+        background-color: white; /* Ensure good contrast */
+    }
+    
+    /* Ensure right-section stays below nav links */
+    .nav-links.active .right-section {
+        order: 2;
+        margin-top: 1rem;
     }
 
-    .wishlist-item::before {
-        width: 100%;
-        height: 3px;
+    .logo {
+        height: 30px;
     }
 
-    .wishlist-item-buttons {
+    
+    .title {
+        font-size: 1.2rem;
+    }
+    
+    .logo {
+        height: 30px;
+    }
+    
+    .mid-section {
+        margin-top: 10px;
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 1rem;
+    }
+    
+    .mid-section a {
+        font-size: 1rem;
+    }
+    
+    .right-section a {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Search bar for mobile */
+    .search-wrapper {
+        max-width: 100%;
+    }
+    
+    /* Product grid for mobile */
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .page-title h2 {
+        font-size: 1.8rem;
+        margin-top: 50px;
+    }
+    
+    /* Product cards for mobile */
+    .flip-card {
+        height: 400px;
+    }
+    
+    .flip-card-front h3 {
+        font-size: 1.1rem;
+    }
+    
+    .flip-card-back h2 {
+        font-size: 1.2rem;
+    }
+    
+    .flip-card-back p {
+        font-size: 0.9rem;
+    }
+    
+    .price {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Small mobile */
+    .nav {
+        padding: 0.8rem 3%;
+    }
+    
+    /* Create a hamburger menu for very small screens */
+    .mid-section {
+        display: none; /* Hide regular nav */
+    }
+    
+    .mobile-nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--off-white);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .search-container {
+        padding: 0 10px;
+    }
+    
+    .search-wrapper {
+        padding: 3px;
+    }
+    
+    #search-input {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    #search-button {
+        padding: 10px 15px;
+    }
+    
+    /* Make products fill width */
+    .flip-card {
+        height: 380px;
+    }
+    
+    .action-buttons {
+        margin-top: 10px;
+    }
+    
+    .favorite-btn, .cart-btn {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+    
+    .notification {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+
+/* Add bottom padding for smaller screens */
+@media (max-width: 767px) {
+    body {
+        padding-bottom: 50px;
     }
 }
