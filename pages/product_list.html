@@ -1,511 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shop</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="icon"
-      href="/media/index_media/TechHive-logo.png"
-      type="image/png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/styles/product_list.css" />
-    <script src="/scripts/product_list.js" defer></script>
-  </head>
-  <body>
-    <div class="nav">
-      <div class="left-section">
-        <img
-          src="/media/index_media/TechHive-logo.png"
-          alt="TechHive Logo"
-          class="logo"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shop</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         />
-        <h1 class="title">TechHive</h1>
-      </div>
-      <div class="mid-section">
-        <a href="/pages/index.html">Home</a>
-        <a href="/pages/about.html">About</a>
-        <a href="/pages/product_list.html">Shop</a>
-        <a href="/pages/cart.html">Cart</a>
-        <a href="/pages/comparison.html">Comparison</a>
-      </div>
-      <div class="right-section">
-        <a href="/pages/login_signup.html">Login</a>
-      </div>
-    </div>
-
-    <div class="page-title">
-      <h2>Our Products</h2>
-    </div>
-    <div id="wishlist-notification" class="notification wishlist">
-      Added to Wishlist!
-    </div>
-    <div id="cart-notification" class="notification">Added to Cart!</div>
-
-    <div class="container">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Anker_Wireless_Charging_Pad__15W_-removebg-preview.png"
-              alt="Anker Wireless Charging Pad"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Anker Wireless Charging Pad (15W)</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Fast wireless charging pad compatible with most Qi-enabled
-              devices.
-            </p>
-            <p class="price">Price: 999 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+        <link
+            rel="icon"
+            href="/media/index_media/TechHive-logo.png"
+            type="image/png"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="/styles/product_list.css" />
+        <script src="/scripts/product_list.js" defer></script>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="left-section">
+                <img
+                    src="/media/index_media/TechHive-logo.png"
+                    alt="TechHive Logo"
+                    class="logo"
+                />
+                <h1 class="title">TechHive</h1>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Apple_iPad_Pro_12.9-inch-removebg-preview.png"
-              alt="Apple iPad Pro 12.9-inch"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Apple iPad Pro 12.9-inch</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Powerful tablet with M1 chip, perfect for productivity and
-              entertainment.
-            </p>
-            <p class="price">Price: 19,499 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="mid-section">
+                <a href="/pages/index.html">Home</a>
+                <a href="/pages/about.html">About</a>
+                <a href="/pages/product_list.html">Shop</a>
+                <a href="/pages/cart.html">Cart</a>
+                <a href="/pages/comparison.html">Comparison</a>
+                <a href="/pages/user_profile.html">Profile</a>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Apple_MacBook_Pro_14-inch__M2_-removebg-preview.png"
-              alt="Apple MacBook Pro 14-inch"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Apple MacBook Pro 14-inch (M2)</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Experience the power of Apple’s M2 chip with this sleek,
-              professional laptop.
-            </p>
-            <p class="price">Price: 29,999 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="right-section">
+                <a href="/pages/login_signup.html">Login</a>
             </div>
-          </div>
         </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Belkin_BoostCharge_Wireless_Charger-removebg-preview.png"
-              alt="Belkin BoostCharge Wireless Charger"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Belkin BoostCharge Wireless Charger</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>Reliable 10W wireless charging pad for fast power-ups.</p>
-            <p class="price">Price: 799 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
-            </div>
-          </div>
+        <div class="page-title">
+            <h2>Our Products</h2>
         </div>
-      </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search products..."
+                />
+                <button id="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div id="search-results-info" class="search-results-info">
+                <span id="results-count"></span>
+            </div>
+        </div>
+        <div id="wishlist-notification" class="notification wishlist">
+            Added to Wishlist!
+        </div>
+        <div id="cart-notification" class="notification">Added to Cart!</div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Bose_QuietComfort_45-removebg-preview.png"
-              alt="Bose QuietComfort 45"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Bose QuietComfort 45</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Top-of-the-line noise-canceling headphones for a premium audio
-              experience.
-            </p>
-            <p class="price">Price: 7,499 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+        <div class="container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Anker_Wireless_Charging_Pad__15W_-removebg-preview.png"
+                            alt="Anker Wireless Charging Pad"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Anker Wireless Charging Pad (15W)</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Fast wireless charging pad compatible with most
+                            Qi-enabled devices.
+                        </p>
+                        <p class="price">Price: 999 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Bose_SoundLink_Revolve+-removebg-preview.png"
-              alt="Bose SoundLink Revolve+"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Bose SoundLink Revolve+</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Portable Bluetooth speaker with 360° sound and long battery life.
-            </p>
-            <p class="price">Price: 4,999 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Apple_iPad_Pro_12.9-inch-removebg-preview.png"
+                            alt="Apple iPad Pro 12.9-inch"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Apple iPad Pro 12.9-inch</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Powerful tablet with M1 chip, perfect for
+                            productivity and entertainment.
+                        </p>
+                        <p class="price">Price: 19,499 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Dell_XPS_13__Intel_Core_i7_-removebg-preview.png"
-              alt="Dell XPS 13 (Intel Core i7)"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Dell XPS 13 (Intel Core i7)</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Powerful and stylish ultrabook with excellent display and
-              performance.
-            </p>
-            <p class="price">Price: 22,999 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Apple_MacBook_Pro_14-inch__M2_-removebg-preview.png"
+                            alt="Apple MacBook Pro 14-inch"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Apple MacBook Pro 14-inch (M2)</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Experience the power of Apple’s M2 chip with this
+                            sleek, professional laptop.
+                        </p>
+                        <p class="price">Price: 29,999 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Google_Pixel_8-removebg-preview.png"
-              alt="Google Pixel 8"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Google Pixel 8</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              The latest Google smartphone with Google Tensor chip and superb
-              camera quality.
-            </p>
-            <p class="price">Price: 12,499 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Belkin_BoostCharge_Wireless_Charger-removebg-preview.png"
+                            alt="Belkin BoostCharge Wireless Charger"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Belkin BoostCharge Wireless Charger</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Reliable 10W wireless charging pad for fast
+                            power-ups.
+                        </p>
+                        <p class="price">Price: 799 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/IPhone_15-removebg-preview.png"
-              alt="iPhone 15"
-              style="width: 300px; height: 300px"
-            />
-            <h3>iPhone 15</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              The latest iPhone model with exceptional performance and
-              innovative features.
-            </p>
-            <p class="price">Price: 22,999 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Bose_QuietComfort_45-removebg-preview.png"
+                            alt="Bose QuietComfort 45"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Bose QuietComfort 45</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Top-of-the-line noise-canceling headphones for a
+                            premium audio experience.
+                        </p>
+                        <p class="price">Price: 7,499 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Jabra_Elite_85t-removebg-preview.png"
-              alt="Jabra Elite 85t"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Jabra Elite 85t</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Advanced noise-canceling earbuds with a customizable sound
-              profile.
-            </p>
-            <p class="price">Price: 3,499 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Bose_SoundLink_Revolve+-removebg-preview.png"
+                            alt="Bose SoundLink Revolve+"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Bose SoundLink Revolve+</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Portable Bluetooth speaker with 360° sound and long
+                            battery life.
+                        </p>
+                        <p class="price">Price: 4,999 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/JBL_speaker-removebg-preview.png"
-              alt="JBL Speaker"
-              style="width: 300px; height: 300px"
-            />
-            <h3>JBL Speaker</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Durable Bluetooth speaker with crisp sound and waterproof design.
-            </p>
-            <p class="price">Price: 1,999 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Dell_XPS_13__Intel_Core_i7_-removebg-preview.png"
+                            alt="Dell XPS 13 (Intel Core i7)"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Dell XPS 13 (Intel Core i7)</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Powerful and stylish ultrabook with excellent
+                            display and performance.
+                        </p>
+                        <p class="price">Price: 22,999 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Logitech_G_Pro_X_Wireless_Headset-removebg-preview.png"
-              alt="Logitech G Pro X Wireless Headset"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Logitech G Pro X Wireless Headset</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Professional-grade gaming headset with Blue VO!CE mic technology.
-            </p>
-            <p class="price">Price: 4,299 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Google_Pixel_8-removebg-preview.png"
+                            alt="Google Pixel 8"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Google Pixel 8</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            The latest Google smartphone with Google Tensor chip
+                            and superb camera quality.
+                        </p>
+                        <p class="price">Price: 12,499 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Microsoft_Surface_Pro_9-removebg-preview.png"
-              alt="Microsoft Surface Pro 9"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Microsoft Surface Pro 9</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Convertible laptop/tablet with Intel Core i7 and a sleek design.
-            </p>
-            <p class="price">Price: 18,499 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/IPhone_15-removebg-preview.png"
+                            alt="iPhone 15"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>iPhone 15</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            The latest iPhone model with exceptional performance
+                            and innovative features.
+                        </p>
+                        <p class="price">Price: 22,999 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Mophie_3-in-1_Wireless_Charging_Station-removebg-preview.png"
-              alt="Mophie 3-in-1 Wireless Charging Station"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Mophie 3-in-1 Wireless Charging Station</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Convenient charging station for your iPhone, Apple Watch, and
-              AirPods.
-            </p>
-            <p class="price">Price: 1,799 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Jabra_Elite_85t-removebg-preview.png"
+                            alt="Jabra Elite 85t"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Jabra Elite 85t</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Advanced noise-canceling earbuds with a customizable
+                            sound profile.
+                        </p>
+                        <p class="price">Price: 3,499 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/OnePlus_11-removebg-preview.png"
-              alt="OnePlus 11"
-              style="width: 300px; height: 300px"
-            />
-            <h3>OnePlus 11</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Powerful 5G smartphone with a stunning display and fast
-              performance.
-            </p>
-            <p class="price">Price: 15,999 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/JBL_speaker-removebg-preview.png"
+                            alt="JBL Speaker"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>JBL Speaker</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Durable Bluetooth speaker with crisp sound and
+                            waterproof design.
+                        </p>
+                        <p class="price">Price: 1,999 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="/media/index_media/product_list/Samsung_Galaxy_Tab_S8-removebg-preview.png"
-              alt="Samsung Galaxy Tab S8"
-              style="width: 300px; height: 300px"
-            />
-            <h3>Samsung Galaxy Tab S8</h3>
-          </div>
-          <div class="flip-card-back">
-            <h2>Description</h2>
-            <p>
-              Premium Android tablet with high performance and a sharp display.
-            </p>
-            <p class="price">Price: 14,499 EGP</p>
-            <div class="action-buttons">
-              <button class="favorite-btn" aria-label="Add to Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="cart-btn" aria-label="Add to Cart">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Logitech_G_Pro_X_Wireless_Headset-removebg-preview.png"
+                            alt="Logitech G Pro X Wireless Headset"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Logitech G Pro X Wireless Headset</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Professional-grade gaming headset with Blue VO!CE
+                            mic technology.
+                        </p>
+                        <p class="price">Price: 4,299 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Microsoft_Surface_Pro_9-removebg-preview.png"
+                            alt="Microsoft Surface Pro 9"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Microsoft Surface Pro 9</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Convertible laptop/tablet with Intel Core i7 and a
+                            sleek design.
+                        </p>
+                        <p class="price">Price: 18,499 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Mophie_3-in-1_Wireless_Charging_Station-removebg-preview.png"
+                            alt="Mophie 3-in-1 Wireless Charging Station"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Mophie 3-in-1 Wireless Charging Station</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Convenient charging station for your iPhone, Apple
+                            Watch, and AirPods.
+                        </p>
+                        <p class="price">Price: 1,799 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/OnePlus_11-removebg-preview.png"
+                            alt="OnePlus 11"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>OnePlus 11</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Powerful 5G smartphone with a stunning display and
+                            fast performance.
+                        </p>
+                        <p class="price">Price: 15,999 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img
+                            src="/media/index_media/product_list/Samsung_Galaxy_Tab_S8-removebg-preview.png"
+                            alt="Samsung Galaxy Tab S8"
+                            style="width: 300px; height: 300px"
+                        />
+                        <h3>Samsung Galaxy Tab S8</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Description</h2>
+                        <p>
+                            Premium Android tablet with high performance and a
+                            sharp display.
+                        </p>
+                        <p class="price">Price: 14,499 EGP</p>
+                        <div class="action-buttons">
+                            <button
+                                class="favorite-btn"
+                                aria-label="Add to Wishlist"
+                            >
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="cart-btn" aria-label="Add to Cart">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
